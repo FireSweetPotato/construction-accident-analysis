@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>철근콘크리트공사 네트워크 시각화</title>
+  <title>조적공사 네트워크 시각화</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
   <style>
@@ -66,7 +66,7 @@
       const graph = new graphology.Graph();
       const container = document.getElementById("container");
 
-      fetch("공종별_forceAtlas2/철근콘크리트공사.txt")
+      fetch("공종별_forceAtlas2/조적공사.txt")
         .then(res => res.text())
         .then(code => {
           eval(code);  // 노드 및 엣지 삽입
@@ -124,4 +124,4 @@
     });
   </script>
 </body>
-</html>
+</html> 

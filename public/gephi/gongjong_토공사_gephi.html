@@ -8,11 +8,60 @@
   <style>
     html, body { margin: 0; padding: 0; height: 100%; }
     #container { width: 100vw; height: 100vh; background: white; position: relative; }
+    #exit-fullscreen {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s ease;
+    }
+    #exit-fullscreen:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+    #exit-fullscreen svg {
+      width: 20px;
+      height: 20px;
+      color: #374151;
+    }
   </style>
 </head>
 <body>
-  <div id="container"></div>
+  <div id="container">
+    <button id="exit-fullscreen" onclick="exitFullscreen()" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
+      </svg>
+    </button>
+  </div>
   <script>
+    function exitFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      const button = document.getElementById('exit-fullscreen');
+      if (button) {
+        button.style.display = document.fullscreenElement ? 'flex' : 'none';
+      }
+    });
+
     window.addEventListener("DOMContentLoaded", () => {
       const graph = new graphology.Graph();
       const container = document.getElementById("container");
