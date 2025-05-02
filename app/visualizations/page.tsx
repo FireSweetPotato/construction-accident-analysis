@@ -2,10 +2,99 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BarChart3, Network, PieChart, TreesIcon as TreeStructure, Cloud, Grid3X3 } from "lucide-react"
+import { BarChart3, Network, PieChart, TreesIcon as TreeStructure, Cloud, Grid3X3, Plus, Minus } from "lucide-react"
 import TopicVisualization from "@/components/visualizations/topic-visualization"
 import { useState } from "react"
 import Image from "next/image"
+
+function VisualizationFrame({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative w-full h-full">
+      <iframe
+        src={`/visualization-viewer.html?image=${encodeURIComponent(src)}&alt=${encodeURIComponent(alt)}`}
+        className="w-full h-full border-0"
+        title={alt}
+      />
+    </div>
+  );
+}
+
+function ZoomableImage({ src, alt }: { src: string; alt: string }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+
+  const handleZoomIn = () => {
+    setScale(prev => Math.min(prev + 0.2, 3));
+  };
+
+  const handleZoomOut = () => {
+    setScale(prev => Math.max(prev - 0.2, 0.5));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setStartPos({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && scale > 1) {
+      setPosition({
+        x: e.clientX - startPos.x,
+        y: e.clientY - startPos.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div className="relative w-full h-full group">
+      <div className="absolute top-4 right-4 flex gap-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button
+          onClick={handleZoomIn}
+          className="bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+          title="확대"
+        >
+          <Plus className="h-5 w-5" />
+        </button>
+        <button
+          onClick={handleZoomOut}
+          className="bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
+          title="축소"
+        >
+          <Minus className="h-5 w-5" />
+        </button>
+      </div>
+      <div 
+        className="w-full h-full"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className={`object-contain p-4 transition-transform duration-200 ${scale > 1 ? 'cursor-move' : ''}`}
+          style={{ 
+            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+          }}
+          draggable="false"
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function VisualizationsPage() {
   const constructionTypes = ["철근콘크리트공사", "가설공사", "기계설비공사", "해체및철거공사", "토공사", "철골공사"] as const;
@@ -14,12 +103,12 @@ export default function VisualizationsPage() {
   const [selectedConstruction, setSelectedConstruction] = useState<ConstructionType>("철근콘크리트공사")
 
   const gephiLinks: Record<ConstructionType, string> = {
-    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html",
-    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html",
-    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html",
-    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html",
-    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html",
-    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html"
+    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true"
   }
 
   // 이미지 경로 생성 함수
@@ -127,11 +216,9 @@ export default function VisualizationsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <Image
+                <VisualizationFrame
                   src={getImagePath("bar")}
                   alt={`${selectedConstruction} 막대그래프`}
-                  fill
-                  className="object-contain p-4"
                 />
               </div>
             </CardContent>
@@ -148,11 +235,9 @@ export default function VisualizationsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <Image
+                <VisualizationFrame
                   src={getImagePath("heatmap")}
                   alt={`${selectedConstruction} 히트맵`}
-                  fill
-                  className="object-contain p-4"
                 />
               </div>
             </CardContent>
@@ -169,11 +254,9 @@ export default function VisualizationsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <Image
+                <VisualizationFrame
                   src={getImagePath("topic")}
                   alt={`${selectedConstruction} 주제분포도`}
-                  fill
-                  className="object-contain p-4"
                 />
               </div>
             </CardContent>
@@ -190,11 +273,9 @@ export default function VisualizationsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <Image
+                <VisualizationFrame
                   src={getImagePath("hierarchy")}
                   alt={`${selectedConstruction} 주제계층도`}
-                  fill
-                  className="object-contain p-4"
                 />
               </div>
             </CardContent>
@@ -211,11 +292,9 @@ export default function VisualizationsPage() {
             </CardHeader>
             <CardContent>
               <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <Image
+                <VisualizationFrame
                   src={getImagePath("wordcloud")}
                   alt={`${selectedConstruction} 워드클라우드`}
-                  fill
-                  className="object-contain p-4"
                 />
               </div>
             </CardContent>

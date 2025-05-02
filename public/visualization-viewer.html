@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시각화 뷰어</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            width: 100vw;
+            height: 100vh;
+        }
+        .viewer-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .image-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: grab;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .controls {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            z-index: 1000;
+        }
+        .viewer-container:hover .controls {
+            opacity: 1;
+        }
+        .control-button {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 1.5rem;
+            font-weight: bold;
+            user-select: none;
+        }
+        .control-button:hover {
+            background: white;
+        }
+        .control-button:active {
+            transform: scale(0.95);
+        }
+        .reset-button {
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            user-select: none;
+            margin-left: 0.5rem;
+        }
+        .reset-button:hover {
+            background: white;
+        }
+        .reset-button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <div class="viewer-container">
+        <div class="controls">
+            <button class="control-button" id="zoomIn" title="확대">+</button>
+            <button class="control-button" id="zoomOut" title="축소">-</button>
+            <button class="reset-button" id="reset" title="원상태로 복귀">초기화</button>
+        </div>
+        <div class="image-container">
+            <img id="visualization" src="" alt="" draggable="false">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const imageSrc = urlParams.get('image');
+            const imageAlt = urlParams.get('alt');
+
+            const image = document.getElementById('visualization');
+            const imageContainer = document.querySelector('.image-container');
+            image.src = imageSrc;
+            image.alt = imageAlt;
+
+            let scale = 1;
+            let isDragging = false;
+            let startX = 0;
+            let startY = 0;
+            let translateX = 0;
+            let translateY = 0;
+
+            // 확대/축소 버튼 이벤트
+            document.getElementById('zoomIn').addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scale = Math.min(scale + 0.2, 3);
+                updateTransform();
+            });
+
+            document.getElementById('zoomOut').addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scale = Math.max(scale - 0.2, 0.5);
+                updateTransform();
+            });
+
+            // 리셋 버튼 이벤트
+            document.getElementById('reset').addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+            });
+
+            // 드래그 이벤트
+            imageContainer.addEventListener('mousedown', (e) => {
+                if (scale > 1) {
+                    e.preventDefault();
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    imageContainer.style.cursor = 'grabbing';
+                }
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && scale > 1) {
+                    e.preventDefault();
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    imageContainer.style.cursor = scale > 1 ? 'grab' : 'default';
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    imageContainer.style.cursor = scale > 1 ? 'grab' : 'default';
+                }
+            });
+
+            function updateTransform() {
+                image.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+                imageContainer.style.cursor = scale > 1 ? 'grab' : 'default';
+            }
+
+            // 터치 이벤트 지원
+            imageContainer.addEventListener('touchstart', (e) => {
+                if (scale > 1) {
+                    e.preventDefault();
+                    isDragging = true;
+                    startX = e.touches[0].clientX - translateX;
+                    startY = e.touches[0].clientY - translateY;
+                }
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging && scale > 1) {
+                    e.preventDefault();
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateTransform();
+                }
+            });
+
+            document.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        });
+    </script>
+</body>
+</html> 

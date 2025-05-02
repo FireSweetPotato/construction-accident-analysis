@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>철근콘크리트공사 네트워크 시각화</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/graphology/0.25.4/graphology.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/2.4.0/sigma.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; }
+    #container { width: 100vw; height: 100vh; background: white; position: relative; }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const graph = new graphology.Graph();
+      const container = document.getElementById("container");
+
+      fetch("공종별_forceAtlas2/철근콘크리트공사.txt")
+        .then(res => res.text())
+        .then(code => {
+          eval(code);  // 노드 및 엣지 삽입
+
+          requestAnimationFrame(() => {
+            const renderer = new Sigma(graph, container, {
+              labelDensity: 1,
+              labelGridCellSize: 20,
+              labelPosition: "inside",
+              labelAlignment: "center",
+              defaultNodeLabelColor: "#fff",
+              defaultLabelSize: 14
+            });
+
+            const baseEdgeOpacity = 0.55;
+            let clickedNode = null;
+
+            function focusNode(nodeId) {
+              const neighbors = new Set();
+              graph.forEachNeighbor(nodeId, n => neighbors.add(n));
+              renderer.setSetting("nodeReducer", (n, attrs) =>
+                n === nodeId || neighbors.has(n) ? attrs : { ...attrs, label: '', color: '#ccc' });
+              renderer.setSetting("edgeReducer", (e, attrs) => {
+                const s = graph.source(e), t = graph.target(e);
+                return s === nodeId || t === nodeId
+                  ? { ...attrs, color: 'rgba(105,105,105,1)' }
+                  : { ...attrs, color: 'rgba(200,200,200,0.1)' };
+              });
+            }
+
+            function clearFocus() {
+              renderer.setSetting("nodeReducer", null);
+              renderer.setSetting("edgeReducer", (e, attrs) => ({
+                ...attrs,
+                color: `rgba(105,105,105,${baseEdgeOpacity})`
+              }));
+            }
+
+            renderer.on("enterNode", e => { if (!clickedNode) focusNode(e.node); });
+            renderer.on("leaveNode", () => { if (!clickedNode) clearFocus(); });
+            renderer.on("clickNode", e => {
+              clickedNode = e.node;
+              focusNode(clickedNode);
+            });
+            renderer.on("clickStage", () => {
+              clickedNode = null;
+              clearFocus();
+            });
+          });
+        })
+        .catch(err => {
+          console.error("스크립트 로딩 오류:", err);
+          container.innerHTML = "<h2>파일을 불러오지 못했습니다</h2>";
+        });
+    });
+  </script>
+</body>
+</html>
