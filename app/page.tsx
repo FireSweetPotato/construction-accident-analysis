@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:gap-12 mb-8">
+          <div className="grid gap-6 mb-8">
             <Card>
               <CardContent className="pt-6">
                 <div className="prose dark:prose-invert max-w-none">
@@ -89,16 +89,29 @@ export default function Home() {
             <Card>
               <CardContent className="pt-6 h-full flex flex-col">
                 <h3 className="text-xl font-bold mb-4">건설업 재해 통계</h3>
-                <div className="flex-grow flex items-center justify-center bg-muted/30 rounded-lg p-4">
-                  <div className="text-center">
-                    <p className="text-muted-foreground mb-2">차트 이미지 위치</p>
-                    <p className="text-sm text-muted-foreground">건설업 재해 발생 현황 및 사망자 통계</p>
+                <div className="flex-grow flex flex-col md:flex-row items-center justify-center gap-4 bg-muted/30 rounded-lg p-4">
+                  <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px]">
+                    <Image
+                      src="/재해자.jpg"
+                      alt="건설업 재해자 통계"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px]">
+                    <Image
+                      src="/사망자.jpg"
+                      alt="건설업 사망자 통계"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   </div>
                 </div>
                 <div className="mt-4 text-sm text-muted-foreground">
                   <p>
-                    고용노동부의 2024년 9월 말 산업 재해 현황 보고서에 따르면, 건설업 재해자는 25,027명으로 전체의
-                    23.8%, 사망자는 351명으로 같은 비율을 차지합니다.
+                    고용노동부의 2024년 산업 재해 현황 보고서에 따르면, 건설업 재해자는 전체 재해자 98,987명 중 25,027명으로 약 25%, 전체 사망자 589명 중 건설업 사망자 수 276명으로 47%를 차지합니다.
                   </p>
                 </div>
               </CardContent>
