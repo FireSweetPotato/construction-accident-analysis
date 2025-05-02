@@ -105,13 +105,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col gap-3 min-[400px]:flex-row pt-4">
               <Link href="/visualizations">
-                <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700 text-white text-lg px-9 py-4.5">
+                <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700 text-white text-base px-7 py-3.5">
                   시각화 결과 보기
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
               <Link href="/methodology">
-                <Button size="lg" variant="outline" className="border-blue-200 hover:bg-blue-50 dark:border-blue-800 dark:hover:bg-blue-950 text-lg px-9 py-4.5">
+                <Button size="lg" variant="outline" className="border-blue-200 hover:bg-blue-50 dark:border-blue-800 dark:hover:bg-blue-950 text-base px-7 py-3.5">
                   연구 방법론
                 </Button>
               </Link>
