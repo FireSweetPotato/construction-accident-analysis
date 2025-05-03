@@ -6,24 +6,38 @@
     <title>Gephi 시각화</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            background-color: #f8f9fa;
-            width: 100vw;
-            height: 100vh;
+            box-sizing: border-box;
         }
-        #graph {
+        html, body {
             width: 100%;
             height: 100%;
-            position: fixed;
+            overflow: hidden;
+            position: relative;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        #graph {
+            position: absolute;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transform-origin: center center;
         }
         #graph svg {
             width: 100%;
             height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
         .node {
             cursor: pointer;
@@ -188,10 +202,10 @@
             const zoom = d3.zoom()
                 .scaleExtent([0.1, 10])
                 .on("zoom", (event) => {
-                    transform = event.transform;
                     g.attr("transform", event.transform);
                 });
 
+            // SVG에 확대/축소 동작 적용
             svg.call(zoom);
 
             // 시뮬레이션 설정
@@ -272,7 +286,7 @@
 
             // 마우스 오버/아웃 이벤트 핸들러
             function handleMouseOver(event, d) {
-                if (selectedNode) return;
+                if (selectedNode && selectedNode !== d.id) return;
 
                 // 연결된 노드와 엣지 찾기
                 const connectedNodes = new Set();
@@ -315,6 +329,7 @@
             }
 
             function handleMouseOut(event, d) {
+                // 선택된 노드가 있으면 마우스 아웃 시에도 강조를 유지
                 if (selectedNode) return;
 
                 // 모든 노드와 엣지 원래 상태로 복원
@@ -334,22 +349,41 @@
 
             // 클릭 이벤트 핸들러
             function handleClick(event, d) {
-                if (selectedNode === d.id) {
-                    // 같은 노드 클릭 시 선택 해제
-                    selectedNode = null;
-                    handleMouseOut(event, d);
-                } else {
-                    // 새 노드 선택
-                    selectedNode = d.id;
-                    handleMouseOver(event, d);
+                // 기존 선택 해제
+                if (selectedNode) {
+                    const previousNode = graphData.nodes.find(n => n.id === selectedNode);
+                    if (previousNode) {
+                        handleMouseOut(event, previousNode);
+                    }
                 }
+
+                // 새 노드 선택
+                selectedNode = d.id;
+                handleMouseOver(event, d);
             }
 
             // 배경 클릭 이벤트
             svg.on("click", event => {
                 if (event.target === svg.node()) {
+                    if (selectedNode) {
+                        const previousNode = graphData.nodes.find(n => n.id === selectedNode);
+                        if (previousNode) {
+                            // 모든 노드와 엣지 원래 상태로 복원
+                            node.classed("highlighted", false);
+                            node.classed("dimmed", false);
+                            link
+                                .classed("highlighted", false)
+                                .classed("dimmed", false)
+                                .attr("stroke", d => d.sourceColor)
+                                .attr("stroke-opacity", 0.5);
+
+                            // 노드 크기와 색상 원래대로
+                            node.select("circle")
+                                .attr("r", d => d.size)
+                                .attr("fill", d => d.modularityColor);
+                        }
+                    }
                     selectedNode = null;
-                    handleMouseOut(event, null);
                 }
             });
         }
