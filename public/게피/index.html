@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공종별 네트워크 분석</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-title {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .file-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.2s;
+        }
+        a:hover {
+            background-color: #e9ecef;
+            color: #3498db;
+        }
+        .viewer-link {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .viewer-link:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>공종별 네트워크 분석</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-title">가설공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/가설공사/가설공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/가설공사/가설공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/가설공사/가설공사_heatmap.png">히트맵</a>
+                <a href="gexf/가설공사/가설공사_barchart.png">바차트</a>
+                <a href="gexf/가설공사/가설공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">기계설비공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/기계설비공사/기계설비공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/기계설비공사/기계설비공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/기계설비공사/기계설비공사_heatmap.png">히트맵</a>
+                <a href="gexf/기계설비공사/기계설비공사_barchart.png">바차트</a>
+                <a href="gexf/기계설비공사/기계설비공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">해체 및 철거공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/해체 및 철거공사/해체 및 철거공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/해체 및 철거공사/해체 및 철거공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/해체 및 철거공사/해체 및 철거공사_heatmap.png">히트맵</a>
+                <a href="gexf/해체 및 철거공사/해체 및 철거공사_barchart.png">바차트</a>
+                <a href="gexf/해체 및 철거공사/해체 및 철거공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">토공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/토공사/토공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/토공사/토공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/토공사/토공사_heatmap.png">히트맵</a>
+                <a href="gexf/토공사/토공사_barchart.png">바차트</a>
+                <a href="gexf/토공사/토공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">철근콘크리트공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/철근콘크리트공사/철근콘크리트공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/철근콘크리트공사/철근콘크리트공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/철근콘크리트공사/철근콘크리트공사_heatmap.png">히트맵</a>
+                <a href="gexf/철근콘크리트공사/철근콘크리트공사_barchart.png">바차트</a>
+                <a href="gexf/철근콘크리트공사/철근콘크리트공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">철골공사</div>
+            <div class="file-links">
+                <a href="gephi_viewer.html?file=gexf/철골공사/철골공사.gexf" class="viewer-link">Gephi 네트워크 시각화</a>
+                <a href="gexf/철골공사/철골공사_wordcloud.png">워드클라우드</a>
+                <a href="gexf/철골공사/철골공사_heatmap.png">히트맵</a>
+                <a href="gexf/철골공사/철골공사_barchart.png">바차트</a>
+                <a href="gexf/철골공사/철골공사_hierarchy.png">계층구조</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

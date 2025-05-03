@@ -1,0 +1,2177 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3" xmlns:viz="http://gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://gexf.net/1.3 http://gexf.net/1.3/gexf.xsd">
+  <meta lastmodifieddate="2025-05-02">
+    <creator>Gephi 0.10.1</creator>
+    <title></title>
+    <description></description>
+  </meta>
+  <graph defaultedgetype="directed" mode="static">
+    <attributes class="node" mode="static">
+      <attribute id="indegree" title="In-Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="outdegree" title="Out-Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="degree" title="Degree" type="integer">
+        <default>0</default>
+      </attribute>
+      <attribute id="eccentricity" title="Eccentricity" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="closnesscentrality" title="Closeness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="harmonicclosnesscentrality" title="Harmonic Closeness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="betweenesscentrality" title="Betweenness Centrality" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="modularity_class" title="Modularity Class" type="integer">
+        <default>0</default>
+      </attribute>
+    </attributes>
+    <nodes>
+      <node id="이동" label="이동">
+        <attvalues>
+          <attvalue for="indegree" value="29"/>
+          <attvalue for="outdegree" value="29"/>
+          <attvalue for="degree" value="58"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5833333333333334"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.685714285714286"/>
+          <attvalue for="betweenesscentrality" value="562.235932757248"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="840.0"/>
+        <viz:position x="10849.265" y="-6222.8887"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="자재" label="자재">
+        <attvalues>
+          <attvalue for="indegree" value="30"/>
+          <attvalue for="outdegree" value="30"/>
+          <attvalue for="degree" value="60"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.6363636363636364"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.7142857142857143"/>
+          <attvalue for="betweenesscentrality" value="376.7006673732857"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="872.0"/>
+        <viz:position x="185.23607" y="-1794.8705"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="운반" label="운반">
+        <attvalues>
+          <attvalue for="indegree" value="17"/>
+          <attvalue for="outdegree" value="17"/>
+          <attvalue for="degree" value="34"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5223880597014925"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5952380952380956"/>
+          <attvalue for="betweenesscentrality" value="31.1665135630653"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="456.0"/>
+        <viz:position x="9772.825" y="-3858.9812"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="비계" label="비계">
+        <attvalues>
+          <attvalue for="indegree" value="20"/>
+          <attvalue for="outdegree" value="20"/>
+          <attvalue for="degree" value="40"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.5833333333333334"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6428571428571429"/>
+          <attvalue for="betweenesscentrality" value="107.57698774861662"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="552.0"/>
+        <viz:position x="14203.357" y="-1841.1383"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="사용" label="사용">
+        <attvalues>
+          <attvalue for="indegree" value="23"/>
+          <attvalue for="outdegree" value="23"/>
+          <attvalue for="degree" value="46"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.5982905982905983"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6642857142857143"/>
+          <attvalue for="betweenesscentrality" value="274.8400928484882"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="648.0"/>
+        <viz:position x="4982.3066" y="2175.7031"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="철근" label="철근">
+        <attvalues>
+          <attvalue for="indegree" value="24"/>
+          <attvalue for="outdegree" value="24"/>
+          <attvalue for="degree" value="48"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.603448275862069"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6714285714285714"/>
+          <attvalue for="betweenesscentrality" value="205.1033760554913"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="680.0"/>
+        <viz:position x="3607.6653" y="-6734.934"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="주위" label="주위">
+        <attvalues>
+          <attvalue for="indegree" value="18"/>
+          <attvalue for="outdegree" value="18"/>
+          <attvalue for="degree" value="36"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5857142857142863"/>
+          <attvalue for="betweenesscentrality" value="183.24825668830258"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="488.0"/>
+        <viz:position x="13345.692" y="-6041.7505"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="설치" label="설치">
+        <attvalues>
+          <attvalue for="indegree" value="23"/>
+          <attvalue for="outdegree" value="23"/>
+          <attvalue for="degree" value="46"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5645161290322581"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6476190476190479"/>
+          <attvalue for="betweenesscentrality" value="105.04094177764695"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="648.0"/>
+        <viz:position x="7426.8496" y="-1612.9602"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="단독" label="단독">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.5511811023622047"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5928571428571429"/>
+          <attvalue for="betweenesscentrality" value="22.61581329089044"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="10909.263" y="-996.52014"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="손가락" label="손가락">
+        <attvalues>
+          <attvalue for="indegree" value="15"/>
+          <attvalue for="outdegree" value="15"/>
+          <attvalue for="degree" value="30"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5511811023622047"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6023809523809525"/>
+          <attvalue for="betweenesscentrality" value="41.19076810571367"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="392.0"/>
+        <viz:position x="10959.119" y="1392.4983"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="철골" label="철골">
+        <attvalues>
+          <attvalue for="indegree" value="17"/>
+          <attvalue for="outdegree" value="17"/>
+          <attvalue for="degree" value="34"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.5691056910569106"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6214285714285714"/>
+          <attvalue for="betweenesscentrality" value="101.53722890645399"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="456.0"/>
+        <viz:position x="2551.6418" y="-3879.1301"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="균형" label="균형">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="7719.567" y="-3868.3135"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="년월" label="년월">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="7107.506" y="-4929.294"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="트러스" label="트러스">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="8468.793" y="-4784.285"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="혼합" label="혼합">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="7161.699" y="-6324.9146"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="소속" label="소속">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="8444.182" y="-6001.6523"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="압송" label="압송">
+        <attvalues>
+          <attvalue for="indegree" value="11"/>
+          <attvalue for="outdegree" value="11"/>
+          <attvalue for="degree" value="22"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47297297297297297"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5333333333333332"/>
+          <attvalue for="betweenesscentrality" value="1.90935960591133"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="264.0"/>
+        <viz:position x="8165.629" y="-7310.3384"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="보행" label="보행">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="13260.404" y="-7735.3716"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="뒷걸음" label="뒷걸음">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="14189.96" y="-7486.3887"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="잔돌" label="잔돌">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="13227.803" y="-9110.27"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="바닥상태" label="바닥상태">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="13916.033" y="-8377.255"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="헛딛음" label="헛딛음">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="12689.525" y="-8430.19"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="물체" label="물체">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="14133.254" y="-9314.856"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="지정" label="지정">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="14868.466" y="-8727.149"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="통행" label="통행">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.3888888888888889"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.46309523809523767"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="15086.676" y="-7795.81"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="안전" label="안전">
+        <attvalues>
+          <attvalue for="indegree" value="24"/>
+          <attvalue for="outdegree" value="24"/>
+          <attvalue for="degree" value="48"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.603448275862069"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6714285714285714"/>
+          <attvalue for="betweenesscentrality" value="293.91202643031005"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="680.0"/>
+        <viz:position x="1869.3949" y="10973.752"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="추락" label="추락">
+        <attvalues>
+          <attvalue for="indegree" value="25"/>
+          <attvalue for="outdegree" value="25"/>
+          <attvalue for="degree" value="50"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.6086956521739131"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6785714285714286"/>
+          <attvalue for="betweenesscentrality" value="238.40688671901538"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="712.0"/>
+        <viz:position x="10115.595" y="7168.138"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="데크" label="데크">
+        <attvalues>
+          <attvalue for="indegree" value="15"/>
+          <attvalue for="outdegree" value="15"/>
+          <attvalue for="degree" value="30"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5511811023622047"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6023809523809525"/>
+          <attvalue for="betweenesscentrality" value="33.33413923680858"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="392.0"/>
+        <viz:position x="14111.05" y="2638.4207"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="바닥" label="바닥">
+        <attvalues>
+          <attvalue for="indegree" value="18"/>
+          <attvalue for="outdegree" value="18"/>
+          <attvalue for="degree" value="36"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5263157894736842"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6023809523809527"/>
+          <attvalue for="betweenesscentrality" value="280.88146943379115"/>
+          <attvalue for="modularity_class" value="0"/>
+        </attvalues>
+        <viz:size value="488.0"/>
+        <viz:position x="13241.088" y="-11337.991"/>
+        <viz:color r="249" g="119" b="67"/>
+      </node>
+      <node id="체결" label="체결">
+        <attvalues>
+          <attvalue for="indegree" value="24"/>
+          <attvalue for="outdegree" value="24"/>
+          <attvalue for="degree" value="48"/>
+          <attvalue for="eccentricity" value="2.0"/>
+          <attvalue for="closnesscentrality" value="0.603448275862069"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6714285714285714"/>
+          <attvalue for="betweenesscentrality" value="293.91202643031005"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="680.0"/>
+        <viz:position x="3861.616" y="15511.7"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="부주의" label="부주의">
+        <attvalues>
+          <attvalue for="indegree" value="34"/>
+          <attvalue for="outdegree" value="34"/>
+          <attvalue for="degree" value="68"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.6140350877192983"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.7238095238095239"/>
+          <attvalue for="betweenesscentrality" value="783.4396713236624"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="1000.0"/>
+        <viz:position x="-3042.0977" y="-902.0125"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="불량" label="불량">
+        <attvalues>
+          <attvalue for="indegree" value="23"/>
+          <attvalue for="outdegree" value="23"/>
+          <attvalue for="degree" value="46"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.56"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6452380952380953"/>
+          <attvalue for="betweenesscentrality" value="308.11244650691134"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="648.0"/>
+        <viz:position x="1268.1238" y="5389.88"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="돌풍" label="돌풍">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="-245.18501" y="-4025.094"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="기술" label="기술">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="-1158.0708" y="-4440.814"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="임목" label="임목">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="477.43878" y="-4774.3857"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="중량" label="중량">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="-414.87448" y="-5648.1016"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="렌탈" label="렌탈">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="-1625.6046" y="-5945.4355"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="난간" label="난간">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="1.9826674" y="-6828.994"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="발판" label="발판">
+        <attvalues>
+          <attvalue for="indegree" value="10"/>
+          <attvalue for="outdegree" value="10"/>
+          <attvalue for="degree" value="20"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523812"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="2"/>
+        </attvalues>
+        <viz:size value="232.0"/>
+        <viz:position x="-1385.1863" y="-7400.078"/>
+        <viz:color r="40" g="179" b="106"/>
+      </node>
+      <node id="배근" label="배근">
+        <attvalues>
+          <attvalue for="indegree" value="17"/>
+          <attvalue for="outdegree" value="17"/>
+          <attvalue for="degree" value="34"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5343511450381679"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6023809523809525"/>
+          <attvalue for="betweenesscentrality" value="225.49504126105796"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="456.0"/>
+        <viz:position x="-7226.369" y="-4203.5117"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="방법" label="방법">
+        <attvalues>
+          <attvalue for="indegree" value="25"/>
+          <attvalue for="outdegree" value="25"/>
+          <attvalue for="degree" value="50"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5691056910569106"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6595238095238096"/>
+          <attvalue for="betweenesscentrality" value="145.1748379747365"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="712.0"/>
+        <viz:position x="-3046.1672" y="14142.603"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="행동" label="행동">
+        <attvalues>
+          <attvalue for="indegree" value="20"/>
+          <attvalue for="outdegree" value="20"/>
+          <attvalue for="degree" value="40"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.546875"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6238095238095239"/>
+          <attvalue for="betweenesscentrality" value="45.77771571489718"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="552.0"/>
+        <viz:position x="-6038.5527" y="3410.1877"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="질병" label="질병">
+        <attvalues>
+          <attvalue for="indegree" value="17"/>
+          <attvalue for="outdegree" value="17"/>
+          <attvalue for="degree" value="34"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5343511450381679"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6023809523809525"/>
+          <attvalue for="betweenesscentrality" value="25.959338737224794"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="456.0"/>
+        <viz:position x="-12094.404" y="4871.6514"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="불안전" label="불안전">
+        <attvalues>
+          <attvalue for="indegree" value="19"/>
+          <attvalue for="outdegree" value="19"/>
+          <attvalue for="degree" value="38"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5426356589147286"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6166666666666667"/>
+          <attvalue for="betweenesscentrality" value="39.3681577290234"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="520.0"/>
+        <viz:position x="-3956.2197" y="2778.5586"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="개인" label="개인">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.49295774647887325"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5571428571428572"/>
+          <attvalue for="betweenesscentrality" value="9.23269507484278"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-7454.027" y="1842.8569"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="부족" label="부족">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.49645390070921985"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5595238095238096"/>
+          <attvalue for="betweenesscentrality" value="5.703024794471238"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-5919.4297" y="1139.2448"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="판단" label="판단">
+        <attvalues>
+          <attvalue for="indegree" value="15"/>
+          <attvalue for="outdegree" value="15"/>
+          <attvalue for="degree" value="30"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5035971223021583"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5738095238095239"/>
+          <attvalue for="betweenesscentrality" value="13.720302838065072"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="392.0"/>
+        <viz:position x="-9701.428" y="1513.8926"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="자세" label="자세">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.49645390070921985"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5595238095238096"/>
+          <attvalue for="betweenesscentrality" value="5.703024794471238"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-7957.946" y="146.44133"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="평재" label="평재">
+        <attvalues>
+          <attvalue for="indegree" value="12"/>
+          <attvalue for="outdegree" value="12"/>
+          <attvalue for="degree" value="24"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.48951048951048953"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.55"/>
+          <attvalue for="betweenesscentrality" value="3.873137088969008"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="296.0"/>
+        <viz:position x="-8895.054" y="-1149.9279"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="인지" label="인지">
+        <attvalues>
+          <attvalue for="indegree" value="18"/>
+          <attvalue for="outdegree" value="18"/>
+          <attvalue for="degree" value="36"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5147058823529411"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5952380952380953"/>
+          <attvalue for="betweenesscentrality" value="42.016911784674015"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="488.0"/>
+        <viz:position x="-9000.397" y="4286.1147"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="구간" label="구간">
+        <attvalues>
+          <attvalue for="indegree" value="23"/>
+          <attvalue for="outdegree" value="23"/>
+          <attvalue for="degree" value="46"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4861111111111111"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5999999999999998"/>
+          <attvalue for="betweenesscentrality" value="89.51049738837462"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="648.0"/>
+        <viz:position x="-13754.525" y="12155.803"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="주변" label="주변">
+        <attvalues>
+          <attvalue for="indegree" value="19"/>
+          <attvalue for="outdegree" value="19"/>
+          <attvalue for="degree" value="38"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.49295774647887325"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5857142857142855"/>
+          <attvalue for="betweenesscentrality" value="47.03855617169656"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="520.0"/>
+        <viz:position x="-7393.3013" y="14611.818"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="배관" label="배관">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.49645390070921985"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5595238095238096"/>
+          <attvalue for="betweenesscentrality" value="105.27197888643258"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-5360.167" y="-4296.1514"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="단순" label="단순">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-4770.97" y="-2425.314"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="과실" label="과실">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-5006.134" y="-1912.5422"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="자의" label="자의">
+        <attvalues>
+          <attvalue for="indegree" value="17"/>
+          <attvalue for="outdegree" value="17"/>
+          <attvalue for="degree" value="34"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.45161290322580644"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5547619047619049"/>
+          <attvalue for="betweenesscentrality" value="67.71282051282049"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="456.0"/>
+        <viz:position x="-5817.2676" y="-1029.6322"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="반경" label="반경">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-5666.4556" y="-2317.6162"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="반복" label="반복">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-4605.841" y="-3175.0295"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="동작" label="동작">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-5473.4077" y="-3075.0317"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="낙하" label="낙하">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.41916167664670656"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.48809523809523825"/>
+          <attvalue for="betweenesscentrality" value="0.15384615384615385"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-6332.1626" y="-2674.4602"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="근로자" label="근로자">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4605263157894737"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5238095238095238"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-4730.0605" y="4925.9224"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="미흡" label="미흡">
+        <attvalues>
+          <attvalue for="indegree" value="22"/>
+          <attvalue for="outdegree" value="22"/>
+          <attvalue for="degree" value="44"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5511811023622047"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6357142857142858"/>
+          <attvalue for="betweenesscentrality" value="75.69330018640365"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="616.0"/>
+        <viz:position x="-6792.3027" y="10184.271"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="결빙" label="결빙">
+        <attvalues>
+          <attvalue for="indegree" value="9"/>
+          <attvalue for="outdegree" value="9"/>
+          <attvalue for="degree" value="18"/>
+          <attvalue for="eccentricity" value="4.0"/>
+          <attvalue for="closnesscentrality" value="0.4605263157894737"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5238095238095238"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="200.0"/>
+        <viz:position x="-5228.9883" y="6345.5986"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="위험" label="위험">
+        <attvalues>
+          <attvalue for="indegree" value="20"/>
+          <attvalue for="outdegree" value="20"/>
+          <attvalue for="degree" value="40"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.5426356589147286"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.6214285714285716"/>
+          <attvalue for="betweenesscentrality" value="63.50563784874131"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="552.0"/>
+        <viz:position x="-10261.055" y="11466.576"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="통제" label="통제">
+        <attvalues>
+          <attvalue for="indegree" value="14"/>
+          <attvalue for="outdegree" value="14"/>
+          <attvalue for="degree" value="28"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4697986577181208"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5452380952380951"/>
+          <attvalue for="betweenesscentrality" value="5.756166056166056"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="360.0"/>
+        <viz:position x="-6975.5435" y="17825.94"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="동부" label="동부">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.445859872611465"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5214285714285714"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-8603.434" y="19046.08"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="원인" label="원인">
+        <attvalues>
+          <attvalue for="indegree" value="15"/>
+          <attvalue for="outdegree" value="15"/>
+          <attvalue for="degree" value="30"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.47619047619047616"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5547619047619047"/>
+          <attvalue for="betweenesscentrality" value="9.336901986901985"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="392.0"/>
+        <viz:position x="-9984.766" y="16910.137"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="착용" label="착용">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.445859872611465"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5214285714285714"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-10478.23" y="19546.348"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="하부" label="하부">
+        <attvalues>
+          <attvalue for="indegree" value="14"/>
+          <attvalue for="outdegree" value="14"/>
+          <attvalue for="degree" value="28"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.45161290322580644"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5309523809523808"/>
+          <attvalue for="betweenesscentrality" value="2.7593073593073596"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="360.0"/>
+        <viz:position x="-12202.279" y="18271.734"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="확보" label="확보">
+        <attvalues>
+          <attvalue for="indegree" value="14"/>
+          <attvalue for="outdegree" value="14"/>
+          <attvalue for="degree" value="28"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.4697986577181208"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5452380952380951"/>
+          <attvalue for="betweenesscentrality" value="5.756166056166056"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="360.0"/>
+        <viz:position x="-6631.751" y="20552.752"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+      <node id="보호" label="보호">
+        <attvalues>
+          <attvalue for="indegree" value="13"/>
+          <attvalue for="outdegree" value="13"/>
+          <attvalue for="degree" value="26"/>
+          <attvalue for="eccentricity" value="3.0"/>
+          <attvalue for="closnesscentrality" value="0.445859872611465"/>
+          <attvalue for="harmonicclosnesscentrality" value="0.5214285714285714"/>
+          <attvalue for="betweenesscentrality" value="0.0"/>
+          <attvalue for="modularity_class" value="1"/>
+        </attvalues>
+        <viz:size value="328.0"/>
+        <viz:position x="-9363.967" y="21425.855"/>
+        <viz:color r="154" g="150" b="229"/>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="19224" source="이동" target="자재" weight="0.5355116128921509"/>
+      <edge id="19225" source="이동" target="운반" weight="1.6602307558059692"/>
+      <edge id="19226" source="이동" target="비계" weight="0.24448604881763458"/>
+      <edge id="19227" source="이동" target="사용" weight="0.240438312292099"/>
+      <edge id="19228" source="이동" target="철근" weight="0.2278723567724228"/>
+      <edge id="19229" source="이동" target="주위" weight="0.4198428988456726"/>
+      <edge id="19230" source="이동" target="설치" weight="0.42405880987644196"/>
+      <edge id="19231" source="이동" target="단독" weight="0.21255958080291748"/>
+      <edge id="19232" source="이동" target="손가락" weight="0.20996984839439392"/>
+      <edge id="19234" source="이동" target="철골" weight="0.3063233494758606"/>
+      <edge id="19236" source="이동" target="균형" weight="0.8310494422912598"/>
+      <edge id="19238" source="이동" target="년월" weight="0.6589381694793701"/>
+      <edge id="19239" source="이동" target="트러스" weight="0.6348293423652649"/>
+      <edge id="19241" source="이동" target="혼합" weight="0.5827245712280273"/>
+      <edge id="19242" source="이동" target="소속" weight="0.5827245712280273"/>
+      <edge id="19243" source="이동" target="압송" weight="0.5827245712280273"/>
+      <edge id="19244" source="이동" target="보행" weight="0.8995762467384338"/>
+      <edge id="19245" source="이동" target="뒷걸음" weight="0.6531376838684082"/>
+      <edge id="19246" source="이동" target="잔돌" weight="0.6531376838684082"/>
+      <edge id="19247" source="이동" target="바닥상태" weight="0.6531376838684082"/>
+      <edge id="19248" source="이동" target="헛딛음" weight="0.6531376838684082"/>
+      <edge id="19249" source="이동" target="물체" weight="0.6021564602851868"/>
+      <edge id="19250" source="이동" target="지정" weight="0.5710578560829163"/>
+      <edge id="19251" source="이동" target="통행" weight="0.5319027900695801"/>
+      <edge id="19254" source="이동" target="안전" weight="0.14298586547374725"/>
+      <edge id="19257" source="이동" target="추락" weight="0.12989923357963562"/>
+      <edge id="19258" source="이동" target="데크" weight="0.11876771599054337"/>
+      <edge id="19259" source="이동" target="바닥" weight="0.1782975196838379"/>
+      <edge id="19260" source="이동" target="체결" weight="0.11418274790048599"/>
+      <edge id="19262" source="자재" target="이동" weight="0.5355116128921509"/>
+      <edge id="19263" source="자재" target="운반" weight="0.39083170890808105"/>
+      <edge id="19264" source="자재" target="비계" weight="0.174636572599411"/>
+      <edge id="19265" source="자재" target="사용" weight="0.22867649793624878"/>
+      <edge id="19266" source="자재" target="철근" weight="0.22019612789154053"/>
+      <edge id="19267" source="자재" target="주위" weight="0.41463521122932434"/>
+      <edge id="19268" source="자재" target="설치" weight="0.48772868514060974"/>
+      <edge id="19269" source="자재" target="단독" weight="0.20079775154590607"/>
+      <edge id="19270" source="자재" target="손가락" weight="0.1982080340385437"/>
+      <edge id="19271" source="자재" target="부주의" weight="11.702424049377441"/>
+      <edge id="19273" source="자재" target="불량" weight="0.12326093018054962"/>
+      <edge id="19275" source="자재" target="돌풍" weight="0.6041783094406128"/>
+      <edge id="19276" source="자재" target="기술" weight="0.5828981399536133"/>
+      <edge id="19277" source="자재" target="임목" weight="0.5315751433372498"/>
+      <edge id="19278" source="자재" target="중량" weight="0.2771305441856384"/>
+      <edge id="19279" source="자재" target="렌탈" weight="0.17354197800159454"/>
+      <edge id="19280" source="자재" target="철골" weight="0.3165102005004883"/>
+      <edge id="19281" source="자재" target="난간" weight="0.16970235109329224"/>
+      <edge id="19282" source="자재" target="발판" weight="0.15326271951198578"/>
+      <edge id="19285" source="자재" target="균형" weight="0.4347822368144989"/>
+      <edge id="19287" source="자재" target="년월" weight="0.2866751253604889"/>
+      <edge id="19288" source="자재" target="트러스" weight="0.27472150325775146"/>
+      <edge id="19290" source="자재" target="혼합" weight="0.22587093710899353"/>
+      <edge id="19291" source="자재" target="소속" weight="0.22587093710899353"/>
+      <edge id="19292" source="자재" target="압송" weight="0.22587093710899353"/>
+      <edge id="19296" source="자재" target="안전" weight="0.15491870045661926"/>
+      <edge id="19298" source="자재" target="추락" weight="0.11249411851167679"/>
+      <edge id="19300" source="자재" target="데크" weight="0.13070055842399597"/>
+      <edge id="19301" source="자재" target="바닥" weight="0.12663273513317108"/>
+      <edge id="19302" source="자재" target="체결" weight="0.1261155903339386"/>
+      <edge id="19304" source="운반" target="이동" weight="1.6602307558059692"/>
+      <edge id="19305" source="운반" target="자재" weight="0.39083170890808105"/>
+      <edge id="19306" source="운반" target="비계" weight="0.08952528983354568"/>
+      <edge id="19307" source="운반" target="사용" weight="0.10523390769958496"/>
+      <edge id="19308" source="운반" target="철근" weight="0.18934544920921326"/>
+      <edge id="19309" source="운반" target="주위" weight="0.1891089379787445"/>
+      <edge id="19310" source="운반" target="설치" weight="0.25316228717565536"/>
+      <edge id="19311" source="운반" target="단독" weight="0.0912945345044136"/>
+      <edge id="19312" source="운반" target="손가락" weight="0.08999967575073242"/>
+      <edge id="19313" source="운반" target="불량" weight="0.06241164356470108"/>
+      <edge id="19317" source="운반" target="균형" weight="0.25662165880203247"/>
+      <edge id="19318" source="운반" target="년월" weight="0.16457931697368622"/>
+      <edge id="19319" source="운반" target="트러스" weight="0.15855877101421356"/>
+      <edge id="19321" source="운반" target="혼합" weight="0.1294875293970108"/>
+      <edge id="19322" source="운반" target="소속" weight="0.1294875293970108"/>
+      <edge id="19323" source="운반" target="압송" weight="0.1294875293970108"/>
+      <edge id="19328" source="운반" target="추락" weight="0.050415899604558945"/>
+      <edge id="19331" source="비계" target="이동" weight="0.24448604881763458"/>
+      <edge id="19332" source="비계" target="자재" weight="0.174636572599411"/>
+      <edge id="19333" source="비계" target="운반" weight="0.08952528983354568"/>
+      <edge id="19334" source="비계" target="사용" weight="0.03659140318632126"/>
+      <edge id="19335" source="비계" target="철근" weight="0.09369224309921265"/>
+      <edge id="19336" source="비계" target="주위" weight="0.09357398748397827"/>
+      <edge id="19337" source="비계" target="설치" weight="0.12887348234653473"/>
+      <edge id="19338" source="비계" target="단독" weight="0.025098223239183426"/>
+      <edge id="19339" source="비계" target="손가락" weight="0.02699151262640953"/>
+      <edge id="19340" source="비계" target="배근" weight="0.01457253098487854"/>
+      <edge id="19341" source="비계" target="방법" weight="0.024858208373188972"/>
+      <edge id="19342" source="비계" target="불량" weight="0.029675694182515144"/>
+      <edge id="19346" source="비계" target="균형" weight="0.09842308610677719"/>
+      <edge id="19348" source="비계" target="년월" weight="0.0630844309926033"/>
+      <edge id="19349" source="비계" target="트러스" weight="0.05937696993350983"/>
+      <edge id="19351" source="비계" target="혼합" weight="0.045452266931533813"/>
+      <edge id="19352" source="비계" target="소속" weight="0.045452266931533813"/>
+      <edge id="19353" source="비계" target="압송" weight="0.045452266931533813"/>
+      <edge id="19358" source="비계" target="추락" weight="0.038334112614393234"/>
+      <edge id="19360" source="비계" target="데크" weight="0.021439149975776672"/>
+      <edge id="19362" source="사용" target="이동" weight="0.240438312292099"/>
+      <edge id="19363" source="사용" target="자재" weight="0.22867649793624878"/>
+      <edge id="19364" source="사용" target="운반" weight="0.10523390769958496"/>
+      <edge id="19365" source="사용" target="비계" weight="0.03659140318632126"/>
+      <edge id="19366" source="사용" target="철근" weight="0.09166838228702545"/>
+      <edge id="19367" source="사용" target="주위" weight="0.09155012667179108"/>
+      <edge id="19368" source="사용" target="설치" weight="0.13648474216461182"/>
+      <edge id="19369" source="사용" target="단독" weight="0.030065705999732018"/>
+      <edge id="19370" source="사용" target="손가락" weight="0.03507845848798752"/>
+      <edge id="19371" source="사용" target="배근" weight="0.01667550392448902"/>
+      <edge id="19372" source="사용" target="행동" weight="0.06790731102228165"/>
+      <edge id="19373" source="사용" target="질병" weight="0.02943875454366207"/>
+      <edge id="19374" source="사용" target="불안전" weight="0.06473199278116226"/>
+      <edge id="19375" source="사용" target="방법" weight="0.026809804141521454"/>
+      <edge id="19378" source="사용" target="개인" weight="0.056885115802288055"/>
+      <edge id="19380" source="사용" target="부족" weight="0.051580753177404404"/>
+      <edge id="19381" source="사용" target="판단" weight="0.0430978387594223"/>
+      <edge id="19382" source="사용" target="자세" weight="0.04720577597618103"/>
+      <edge id="19383" source="사용" target="평재" weight="0.03647460415959358"/>
+      <edge id="19384" source="사용" target="인지" weight="0.04504682868719101"/>
+      <edge id="19391" source="사용" target="구간" weight="0.03658817335963249"/>
+      <edge id="19394" source="사용" target="추락" weight="0.0361718013882637"/>
+      <edge id="19396" source="사용" target="데크" weight="0.028130661696195602"/>
+      <edge id="19398" source="철근" target="이동" weight="0.2278723567724228"/>
+      <edge id="19399" source="철근" target="자재" weight="0.22019612789154053"/>
+      <edge id="19400" source="철근" target="운반" weight="0.18934544920921326"/>
+      <edge id="19401" source="철근" target="비계" weight="0.09369224309921265"/>
+      <edge id="19402" source="철근" target="사용" weight="0.09166838228702545"/>
+      <edge id="19403" source="철근" target="주위" weight="0.1619778722524643"/>
+      <edge id="19404" source="철근" target="설치" weight="0.2000160813331604"/>
+      <edge id="19405" source="철근" target="단독" weight="0.04083515703678131"/>
+      <edge id="19406" source="철근" target="손가락" weight="0.04282699525356293"/>
+      <edge id="19407" source="철근" target="부주의" weight="0.29144635796546936"/>
+      <edge id="19408" source="철근" target="배근" weight="0.023835793137550354"/>
+      <edge id="19411" source="철근" target="돌풍" weight="0.16059578955173492"/>
+      <edge id="19412" source="철근" target="기술" weight="0.15242508053779602"/>
+      <edge id="19414" source="철근" target="임목" weight="0.13326984643936157"/>
+      <edge id="19415" source="철근" target="중량" weight="0.12219872325658798"/>
+      <edge id="19416" source="철근" target="렌탈" weight="0.13207027316093445"/>
+      <edge id="19417" source="철근" target="철골" weight="0.24852514266967773"/>
+      <edge id="19418" source="철근" target="난간" weight="0.12153822928667068"/>
+      <edge id="19419" source="철근" target="발판" weight="0.09728369116783142"/>
+      <edge id="19428" source="철근" target="안전" weight="0.06748849153518677"/>
+      <edge id="19431" source="철근" target="추락" weight="0.06094517931342125"/>
+      <edge id="19433" source="철근" target="데크" weight="0.0355515256524086"/>
+      <edge id="19434" source="철근" target="바닥" weight="0.05334550887346268"/>
+      <edge id="19435" source="철근" target="체결" weight="0.05308693274855614"/>
+      <edge id="19436" source="주위" target="이동" weight="0.4198428988456726"/>
+      <edge id="19437" source="주위" target="자재" weight="0.41463521122932434"/>
+      <edge id="19438" source="주위" target="운반" weight="0.1891089379787445"/>
+      <edge id="19439" source="주위" target="비계" weight="0.09357398748397827"/>
+      <edge id="19440" source="주위" target="사용" weight="0.09155012667179108"/>
+      <edge id="19441" source="주위" target="철근" weight="0.1619778722524643"/>
+      <edge id="19442" source="주위" target="설치" weight="0.24093114584684372"/>
+      <edge id="19443" source="주위" target="단독" weight="0.07761075347661972"/>
+      <edge id="19444" source="주위" target="손가락" weight="0.07631589472293854"/>
+      <edge id="19451" source="주위" target="보행" weight="0.430513471364975"/>
+      <edge id="19452" source="주위" target="뒷걸음" weight="0.30474522709846497"/>
+      <edge id="19453" source="주위" target="잔돌" weight="0.30474522709846497"/>
+      <edge id="19454" source="주위" target="바닥상태" weight="0.30474522709846497"/>
+      <edge id="19455" source="주위" target="헛딛음" weight="0.30474522709846497"/>
+      <edge id="19456" source="주위" target="물체" weight="0.2808155119419098"/>
+      <edge id="19457" source="주위" target="지정" weight="0.26480773091316223"/>
+      <edge id="19458" source="주위" target="통행" weight="0.24500027298927307"/>
+      <edge id="19462" source="주위" target="바닥" weight="0.06513753533363342"/>
+      <edge id="19464" source="설치" target="이동" weight="0.42405880987644196"/>
+      <edge id="19465" source="설치" target="자재" weight="0.48772868514060974"/>
+      <edge id="19466" source="설치" target="운반" weight="0.25316228717565536"/>
+      <edge id="19467" source="설치" target="비계" weight="0.12887348234653473"/>
+      <edge id="19468" source="설치" target="사용" weight="0.13648474216461182"/>
+      <edge id="19469" source="설치" target="철근" weight="0.2000160813331604"/>
+      <edge id="19470" source="설치" target="주위" weight="0.24093114584684372"/>
+      <edge id="19471" source="설치" target="단독" weight="0.11557568237185478"/>
+      <edge id="19472" source="설치" target="손가락" weight="0.11363339424133301"/>
+      <edge id="19473" source="설치" target="불량" weight="0.08979938551783562"/>
+      <edge id="19475" source="설치" target="철골" weight="0.25885431468486786"/>
+      <edge id="19478" source="설치" target="균형" weight="0.31175147742033005"/>
+      <edge id="19480" source="설치" target="년월" weight="0.1988643854856491"/>
+      <edge id="19481" source="설치" target="트러스" weight="0.1858893670141697"/>
+      <edge id="19482" source="설치" target="혼합" weight="0.1436142660677433"/>
+      <edge id="19483" source="설치" target="소속" weight="0.1436142660677433"/>
+      <edge id="19484" source="설치" target="압송" weight="0.1436142660677433"/>
+      <edge id="19487" source="설치" target="주변" weight="0.12082014977931976"/>
+      <edge id="19489" source="설치" target="안전" weight="0.12179530039429665"/>
+      <edge id="19491" source="설치" target="추락" weight="0.08901857770979404"/>
+      <edge id="19493" source="설치" target="데크" weight="0.10363169386982918"/>
+      <edge id="19494" source="설치" target="바닥" weight="0.10058082640171051"/>
+      <edge id="19495" source="설치" target="체결" weight="0.05131597816944122"/>
+      <edge id="19497" source="단독" target="이동" weight="0.21255958080291748"/>
+      <edge id="19498" source="단독" target="자재" weight="0.20079775154590607"/>
+      <edge id="19499" source="단독" target="운반" weight="0.0912945345044136"/>
+      <edge id="19500" source="단독" target="비계" weight="0.025098223239183426"/>
+      <edge id="19501" source="단독" target="사용" weight="0.030065705999732018"/>
+      <edge id="19502" source="단독" target="철근" weight="0.04083515703678131"/>
+      <edge id="19503" source="단독" target="주위" weight="0.07761075347661972"/>
+      <edge id="19504" source="단독" target="설치" weight="0.11557568237185478"/>
+      <edge id="19505" source="단독" target="손가락" weight="0.030805140733718872"/>
+      <edge id="19506" source="단독" target="배근" weight="0.016775531694293022"/>
+      <edge id="19507" source="단독" target="방법" weight="0.020074570551514626"/>
+      <edge id="19517" source="단독" target="추락" weight="0.020082850009202957"/>
+      <edge id="19519" source="단독" target="데크" weight="0.020477809011936188"/>
+      <edge id="19521" source="손가락" target="이동" weight="0.20996984839439392"/>
+      <edge id="19522" source="손가락" target="자재" weight="0.1982080340385437"/>
+      <edge id="19523" source="손가락" target="운반" weight="0.08999967575073242"/>
+      <edge id="19524" source="손가락" target="비계" weight="0.02699151262640953"/>
+      <edge id="19525" source="손가락" target="사용" weight="0.03507845848798752"/>
+      <edge id="19526" source="손가락" target="철근" weight="0.04282699525356293"/>
+      <edge id="19527" source="손가락" target="주위" weight="0.07631589472293854"/>
+      <edge id="19528" source="손가락" target="설치" weight="0.11363339424133301"/>
+      <edge id="19529" source="손가락" target="단독" weight="0.030805140733718872"/>
+      <edge id="19530" source="손가락" target="배관" weight="0.00963031779974699"/>
+      <edge id="19531" source="손가락" target="배근" weight="0.01708875223994255"/>
+      <edge id="19539" source="손가락" target="안전" weight="0.02487938292324543"/>
+      <edge id="19542" source="손가락" target="추락" weight="0.028851477429270744"/>
+      <edge id="19544" source="손가락" target="데크" weight="0.03044641949236393"/>
+      <edge id="19545" source="손가락" target="체결" weight="0.021020939573645592"/>
+      <edge id="19547" source="단순" target="과실" weight="1.4247310161590576"/>
+      <edge id="19548" source="단순" target="자의" weight="1.4221419095993042"/>
+      <edge id="19549" source="단순" target="반경" weight="0.8049778342247009"/>
+      <edge id="19550" source="단순" target="반복" weight="0.7990664839744568"/>
+      <edge id="19551" source="단순" target="동작" weight="0.7876846194267273"/>
+      <edge id="19552" source="단순" target="낙하" weight="0.7597192525863647"/>
+      <edge id="19553" source="단순" target="부주의" weight="3.061824083328247"/>
+      <edge id="19554" source="단순" target="배관" weight="0.7406595349311829"/>
+      <edge id="19555" source="단순" target="배근" weight="0.7406595349311829"/>
+      <edge id="19560" source="과실" target="단순" weight="1.4247310161590576"/>
+      <edge id="19561" source="과실" target="자의" weight="1.3486133813858032"/>
+      <edge id="19562" source="과실" target="반경" weight="0.7519745826721191"/>
+      <edge id="19563" source="과실" target="반복" weight="0.745922327041626"/>
+      <edge id="19564" source="과실" target="동작" weight="0.7349573373794556"/>
+      <edge id="19565" source="과실" target="낙하" weight="0.7079465985298157"/>
+      <edge id="19566" source="과실" target="부주의" weight="2.8665499687194824"/>
+      <edge id="19567" source="과실" target="배관" weight="0.6918409466743469"/>
+      <edge id="19568" source="과실" target="배근" weight="0.6918409466743469"/>
+      <edge id="19573" source="자의" target="단순" weight="1.4221419095993042"/>
+      <edge id="19574" source="자의" target="과실" weight="1.3486133813858032"/>
+      <edge id="19575" source="자의" target="반경" weight="0.32987722754478455"/>
+      <edge id="19576" source="자의" target="반복" weight="0.32468295097351074"/>
+      <edge id="19577" source="자의" target="동작" weight="0.31574708223342896"/>
+      <edge id="19578" source="자의" target="낙하" weight="0.2864822447299957"/>
+      <edge id="19579" source="자의" target="부주의" weight="1.6371833086013794"/>
+      <edge id="19580" source="자의" target="배관" weight="0.28435057401657104"/>
+      <edge id="19581" source="자의" target="배근" weight="0.28435057401657104"/>
+      <edge id="19583" source="자의" target="행동" weight="0.6359165906906128"/>
+      <edge id="19584" source="자의" target="불안전" weight="0.3543257415294647"/>
+      <edge id="19588" source="자의" target="개인" weight="0.22268152236938477"/>
+      <edge id="19590" source="자의" target="부족" weight="0.20346599817276"/>
+      <edge id="19591" source="자의" target="판단" weight="0.1860731840133667"/>
+      <edge id="19592" source="자의" target="자세" weight="0.1939728558063507"/>
+      <edge id="19593" source="자의" target="평재" weight="0.1895362138748169"/>
+      <edge id="19594" source="자의" target="인지" weight="0.2560015618801117"/>
+      <edge id="19595" source="반경" target="단순" weight="0.8049778342247009"/>
+      <edge id="19596" source="반경" target="과실" weight="0.7519745826721191"/>
+      <edge id="19597" source="반경" target="자의" weight="0.32987722754478455"/>
+      <edge id="19598" source="반경" target="반복" weight="0.1252249777317047"/>
+      <edge id="19599" source="반경" target="동작" weight="0.11809642612934113"/>
+      <edge id="19600" source="반경" target="낙하" weight="0.10066266357898712"/>
+      <edge id="19601" source="반경" target="부주의" weight="0.35722044110298157"/>
+      <edge id="19602" source="반경" target="배관" weight="0.06450856477022171"/>
+      <edge id="19603" source="반경" target="배근" weight="0.06450856477022171"/>
+      <edge id="19608" source="반복" target="단순" weight="0.7990664839744568"/>
+      <edge id="19609" source="반복" target="과실" weight="0.745922327041626"/>
+      <edge id="19610" source="반복" target="자의" weight="0.32468295097351074"/>
+      <edge id="19611" source="반복" target="반경" weight="0.1252249777317047"/>
+      <edge id="19612" source="반복" target="동작" weight="0.11536845564842224"/>
+      <edge id="19613" source="반복" target="낙하" weight="0.0979018434882164"/>
+      <edge id="19614" source="반복" target="부주의" weight="0.3441958427429199"/>
+      <edge id="19615" source="반복" target="배관" weight="0.0612524151802063"/>
+      <edge id="19616" source="반복" target="배근" weight="0.0612524151802063"/>
+      <edge id="19621" source="동작" target="단순" weight="0.7876846194267273"/>
+      <edge id="19622" source="동작" target="과실" weight="0.7349573373794556"/>
+      <edge id="19623" source="동작" target="자의" weight="0.31574708223342896"/>
+      <edge id="19624" source="동작" target="반경" weight="0.11809642612934113"/>
+      <edge id="19625" source="동작" target="반복" weight="0.11536845564842224"/>
+      <edge id="19626" source="동작" target="낙하" weight="0.09254506230354309"/>
+      <edge id="19627" source="동작" target="부주의" weight="0.3189139664173126"/>
+      <edge id="19628" source="동작" target="배관" weight="0.05493195354938507"/>
+      <edge id="19629" source="동작" target="배근" weight="0.05493195354938507"/>
+      <edge id="19634" source="낙하" target="단순" weight="0.7597192525863647"/>
+      <edge id="19635" source="낙하" target="과실" weight="0.7079465985298157"/>
+      <edge id="19636" source="낙하" target="자의" weight="0.2864822447299957"/>
+      <edge id="19637" source="낙하" target="반경" weight="0.10066266357898712"/>
+      <edge id="19638" source="낙하" target="반복" weight="0.0979018434882164"/>
+      <edge id="19639" source="낙하" target="동작" weight="0.09254506230354309"/>
+      <edge id="19640" source="낙하" target="부주의" weight="0.253937304019928"/>
+      <edge id="19641" source="낙하" target="배관" weight="0.03868778422474861"/>
+      <edge id="19642" source="낙하" target="배근" weight="0.03868778422474861"/>
+      <edge id="19647" source="부주의" target="자재" weight="11.702424049377441"/>
+      <edge id="19648" source="부주의" target="철근" weight="0.29144635796546936"/>
+      <edge id="19649" source="부주의" target="단순" weight="3.061824083328247"/>
+      <edge id="19650" source="부주의" target="과실" weight="2.8665499687194824"/>
+      <edge id="19651" source="부주의" target="자의" weight="1.6371833086013794"/>
+      <edge id="19652" source="부주의" target="반경" weight="0.35722044110298157"/>
+      <edge id="19653" source="부주의" target="반복" weight="0.3441958427429199"/>
+      <edge id="19654" source="부주의" target="동작" weight="0.3189139664173126"/>
+      <edge id="19655" source="부주의" target="낙하" weight="0.253937304019928"/>
+      <edge id="19656" source="부주의" target="배관" weight="0.09918616712093353"/>
+      <edge id="19657" source="부주의" target="배근" weight="0.09918616712093353"/>
+      <edge id="19658" source="부주의" target="근로자" weight="0.6697362661361694"/>
+      <edge id="19659" source="부주의" target="미흡" weight="0.6559062004089355"/>
+      <edge id="19660" source="부주의" target="행동" weight="1.353191614151001"/>
+      <edge id="19661" source="부주의" target="결빙" weight="0.24018411338329315"/>
+      <edge id="19662" source="부주의" target="질병" weight="0.24018411338329315"/>
+      <edge id="19663" source="부주의" target="불안전" weight="1.534067988395691"/>
+      <edge id="19664" source="부주의" target="방법" weight="0.2361679971218109"/>
+      <edge id="19665" source="부주의" target="위험" weight="0.2353772222995758"/>
+      <edge id="19666" source="부주의" target="불량" weight="0.22729556262493134"/>
+      <edge id="19667" source="부주의" target="돌풍" weight="0.4127136766910553"/>
+      <edge id="19668" source="부주의" target="기술" weight="0.3917716145515442"/>
+      <edge id="19670" source="부주의" target="임목" weight="0.34110215306282043"/>
+      <edge id="19671" source="부주의" target="중량" weight="0.2953042685985565"/>
+      <edge id="19672" source="부주의" target="렌탈" weight="0.3003386855125427"/>
+      <edge id="19673" source="부주의" target="철골" weight="0.4772883355617523"/>
+      <edge id="19674" source="부주의" target="난간" weight="0.2659761905670166"/>
+      <edge id="19675" source="부주의" target="발판" weight="0.23470550775527954"/>
+      <edge id="19678" source="부주의" target="개인" weight="0.7051999568939209"/>
+      <edge id="19680" source="부주의" target="부족" weight="0.5987927913665771"/>
+      <edge id="19681" source="부주의" target="판단" weight="0.5757996439933777"/>
+      <edge id="19682" source="부주의" target="자세" weight="0.5660052299499512"/>
+      <edge id="19683" source="부주의" target="평재" weight="0.5556681156158447"/>
+      <edge id="19684" source="부주의" target="인지" weight="0.5526822805404663"/>
+      <edge id="19690" source="배관" target="손가락" weight="0.00963031779974699"/>
+      <edge id="19691" source="배관" target="단순" weight="0.7406595349311829"/>
+      <edge id="19692" source="배관" target="과실" weight="0.6918409466743469"/>
+      <edge id="19693" source="배관" target="자의" weight="0.28435057401657104"/>
+      <edge id="19694" source="배관" target="반경" weight="0.06450856477022171"/>
+      <edge id="19695" source="배관" target="반복" weight="0.0612524151802063"/>
+      <edge id="19696" source="배관" target="동작" weight="0.05493195354938507"/>
+      <edge id="19697" source="배관" target="낙하" weight="0.03868778422474861"/>
+      <edge id="19698" source="배관" target="부주의" weight="0.09918616712093353"/>
+      <edge id="19703" source="배관" target="안전" weight="0.011728187091648579"/>
+      <edge id="19704" source="배관" target="추락" weight="0.008830701932311058"/>
+      <edge id="19705" source="배관" target="데크" weight="0.011145515367388725"/>
+      <edge id="19706" source="배관" target="체결" weight="0.009412079118192196"/>
+      <edge id="19707" source="배근" target="비계" weight="0.01457253098487854"/>
+      <edge id="19708" source="배근" target="사용" weight="0.01667550392448902"/>
+      <edge id="19709" source="배근" target="철근" weight="0.023835793137550354"/>
+      <edge id="19710" source="배근" target="단독" weight="0.016775531694293022"/>
+      <edge id="19711" source="배근" target="손가락" weight="0.01708875223994255"/>
+      <edge id="19712" source="배근" target="단순" weight="0.7406595349311829"/>
+      <edge id="19713" source="배근" target="과실" weight="0.6918409466743469"/>
+      <edge id="19714" source="배근" target="자의" weight="0.28435057401657104"/>
+      <edge id="19715" source="배근" target="반경" weight="0.06450856477022171"/>
+      <edge id="19716" source="배근" target="반복" weight="0.0612524151802063"/>
+      <edge id="19717" source="배근" target="동작" weight="0.05493195354938507"/>
+      <edge id="19718" source="배근" target="낙하" weight="0.03868778422474861"/>
+      <edge id="19719" source="배근" target="부주의" weight="0.09918616712093353"/>
+      <edge id="19724" source="배근" target="안전" weight="0.013720819726586342"/>
+      <edge id="19725" source="배근" target="추락" weight="0.012074451893568039"/>
+      <edge id="19726" source="배근" target="데크" weight="0.01247589010745287"/>
+      <edge id="19727" source="배근" target="체결" weight="0.009182716719806194"/>
+      <edge id="19729" source="근로자" target="부주의" weight="0.6697362661361694"/>
+      <edge id="19730" source="근로자" target="미흡" weight="0.3426525890827179"/>
+      <edge id="19732" source="근로자" target="행동" weight="0.3069440424442291"/>
+      <edge id="19733" source="근로자" target="결빙" weight="0.14917773008346558"/>
+      <edge id="19734" source="근로자" target="질병" weight="0.12702679634094238"/>
+      <edge id="19735" source="근로자" target="불안전" weight="0.29789918661117554"/>
+      <edge id="19736" source="근로자" target="방법" weight="0.10294945538043976"/>
+      <edge id="19737" source="근로자" target="위험" weight="0.10437490791082382"/>
+      <edge id="19738" source="근로자" target="불량" weight="0.14616191387176514"/>
+      <edge id="19744" source="미흡" target="부주의" weight="0.6559062004089355"/>
+      <edge id="19745" source="미흡" target="근로자" weight="0.3426525890827179"/>
+      <edge id="19747" source="미흡" target="행동" weight="0.2721048891544342"/>
+      <edge id="19748" source="미흡" target="결빙" weight="0.12787649035453796"/>
+      <edge id="19749" source="미흡" target="질병" weight="0.12787649035453796"/>
+      <edge id="19750" source="미흡" target="불안전" weight="0.2540152072906494"/>
+      <edge id="19751" source="미흡" target="방법" weight="0.08828713744878769"/>
+      <edge id="19752" source="미흡" target="위험" weight="0.10593430697917938"/>
+      <edge id="19753" source="미흡" target="불량" weight="0.07275515049695969"/>
+      <edge id="19758" source="미흡" target="판단" weight="0.08234937489032745"/>
+      <edge id="19759" source="미흡" target="인지" weight="0.077621690928936"/>
+      <edge id="19760" source="미흡" target="통제" weight="0.2017519623041153"/>
+      <edge id="19761" source="미흡" target="주변" weight="0.16376827657222748"/>
+      <edge id="19762" source="미흡" target="동부" weight="0.1771329790353775"/>
+      <edge id="19763" source="미흡" target="원인" weight="0.17856191098690033"/>
+      <edge id="19764" source="미흡" target="착용" weight="0.16811104118824005"/>
+      <edge id="19765" source="미흡" target="하부" weight="0.15436792373657227"/>
+      <edge id="19766" source="미흡" target="구간" weight="0.12785685062408447"/>
+      <edge id="19767" source="미흡" target="확보" weight="0.15832525491714478"/>
+      <edge id="19768" source="미흡" target="보호" weight="0.15064862370491028"/>
+      <edge id="19769" source="미흡" target="안전" weight="0.09524920582771301"/>
+      <edge id="19770" source="미흡" target="체결" weight="0.07398062944412231"/>
+      <edge id="19814" source="행동" target="사용" weight="0.06790731102228165"/>
+      <edge id="19815" source="행동" target="자의" weight="0.6359165906906128"/>
+      <edge id="19816" source="행동" target="부주의" weight="1.353191614151001"/>
+      <edge id="19817" source="행동" target="근로자" weight="0.3069440424442291"/>
+      <edge id="19818" source="행동" target="미흡" weight="0.2721048891544342"/>
+      <edge id="19820" source="행동" target="결빙" weight="0.09216795116662979"/>
+      <edge id="19821" source="행동" target="질병" weight="0.06815798580646515"/>
+      <edge id="19822" source="행동" target="불안전" weight="0.17511574923992157"/>
+      <edge id="19823" source="행동" target="방법" weight="0.09015989303588867"/>
+      <edge id="19824" source="행동" target="위험" weight="0.04723392054438591"/>
+      <edge id="19825" source="행동" target="불량" weight="0.08572367578744888"/>
+      <edge id="19830" source="행동" target="개인" weight="0.17955297231674194"/>
+      <edge id="19831" source="행동" target="부족" weight="0.11773701012134552"/>
+      <edge id="19832" source="행동" target="판단" weight="0.11825116723775864"/>
+      <edge id="19833" source="행동" target="자세" weight="0.10371457040309906"/>
+      <edge id="19834" source="행동" target="평재" weight="0.09610942751169205"/>
+      <edge id="19835" source="행동" target="인지" weight="0.10611788183450699"/>
+      <edge id="19837" source="행동" target="주변" weight="0.08065374940633774"/>
+      <edge id="19838" source="행동" target="구간" weight="0.10965336114168167"/>
+      <edge id="19839" source="행동" target="추락" weight="0.04663534834980965"/>
+      <edge id="19840" source="결빙" target="부주의" weight="0.24018411338329315"/>
+      <edge id="19841" source="결빙" target="근로자" weight="0.14917773008346558"/>
+      <edge id="19842" source="결빙" target="미흡" weight="0.12787649035453796"/>
+      <edge id="19844" source="결빙" target="행동" weight="0.09216795116662979"/>
+      <edge id="19845" source="결빙" target="질병" weight="0.035763535648584366"/>
+      <edge id="19846" source="결빙" target="불안전" weight="0.083123117685318"/>
+      <edge id="19847" source="결빙" target="방법" weight="0.027365101501345634"/>
+      <edge id="19848" source="결빙" target="위험" weight="0.028771212324500084"/>
+      <edge id="19849" source="결빙" target="불량" weight="0.03877386450767517"/>
+      <edge id="19855" source="질병" target="사용" weight="0.02943875454366207"/>
+      <edge id="19856" source="질병" target="부주의" weight="0.24018411338329315"/>
+      <edge id="19857" source="질병" target="근로자" weight="0.12702679634094238"/>
+      <edge id="19858" source="질병" target="미흡" weight="0.12787649035453796"/>
+      <edge id="19860" source="질병" target="행동" weight="0.06815798580646515"/>
+      <edge id="19861" source="질병" target="결빙" weight="0.035763535648584366"/>
+      <edge id="19862" source="질병" target="불안전" weight="0.05833866819739342"/>
+      <edge id="19863" source="질병" target="방법" weight="0.02325166016817093"/>
+      <edge id="19864" source="질병" target="위험" weight="0.024493269622325897"/>
+      <edge id="19865" source="질병" target="불량" weight="0.03877386450767517"/>
+      <edge id="19869" source="질병" target="개인" weight="0.046650420874357224"/>
+      <edge id="19871" source="질병" target="부족" weight="0.038100503385066986"/>
+      <edge id="19872" source="질병" target="판단" weight="0.03171958774328232"/>
+      <edge id="19873" source="질병" target="자세" weight="0.03438645973801613"/>
+      <edge id="19874" source="질병" target="평재" weight="0.027511803433299065"/>
+      <edge id="19875" source="질병" target="인지" weight="0.031957000494003296"/>
+      <edge id="19877" source="질병" target="추락" weight="0.02071603387594223"/>
+      <edge id="19878" source="불안전" target="사용" weight="0.06473199278116226"/>
+      <edge id="19879" source="불안전" target="자의" weight="0.3543257415294647"/>
+      <edge id="19880" source="불안전" target="부주의" weight="1.534067988395691"/>
+      <edge id="19881" source="불안전" target="근로자" weight="0.29789918661117554"/>
+      <edge id="19882" source="불안전" target="미흡" weight="0.2540152072906494"/>
+      <edge id="19884" source="불안전" target="행동" weight="0.17511574923992157"/>
+      <edge id="19885" source="불안전" target="결빙" weight="0.083123117685318"/>
+      <edge id="19886" source="불안전" target="질병" weight="0.05833866819739342"/>
+      <edge id="19887" source="불안전" target="방법" weight="0.08111505210399628"/>
+      <edge id="19888" source="불안전" target="위험" weight="0.08071966469287872"/>
+      <edge id="19889" source="불안전" target="불량" weight="0.07667883485555649"/>
+      <edge id="19893" source="불안전" target="개인" weight="0.16937962174415588"/>
+      <edge id="19895" source="불안전" target="부족" weight="0.12194737792015076"/>
+      <edge id="19896" source="불안전" target="판단" weight="0.10594973713159561"/>
+      <edge id="19897" source="불안전" target="자세" weight="0.10581736266613007"/>
+      <edge id="19898" source="불안전" target="평재" weight="0.099795863032341"/>
+      <edge id="19899" source="불안전" target="인지" weight="0.09317844361066818"/>
+      <edge id="19901" source="불안전" target="구간" weight="0.08638924360275269"/>
+      <edge id="19902" source="불안전" target="추락" weight="0.04291805624961853"/>
+      <edge id="19903" source="방법" target="비계" weight="0.024858208373188972"/>
+      <edge id="19904" source="방법" target="사용" weight="0.026809804141521454"/>
+      <edge id="19905" source="방법" target="단독" weight="0.020074570551514626"/>
+      <edge id="19906" source="방법" target="부주의" weight="0.2361679971218109"/>
+      <edge id="19907" source="방법" target="근로자" weight="0.10294945538043976"/>
+      <edge id="19908" source="방법" target="미흡" weight="0.08828713744878769"/>
+      <edge id="19910" source="방법" target="행동" weight="0.09015989303588867"/>
+      <edge id="19911" source="방법" target="결빙" weight="0.027365101501345634"/>
+      <edge id="19912" source="방법" target="질병" weight="0.02325166016817093"/>
+      <edge id="19913" source="방법" target="불안전" weight="0.08111505210399628"/>
+      <edge id="19914" source="방법" target="위험" weight="0.0338563434779644"/>
+      <edge id="19915" source="방법" target="불량" weight="0.022881682962179184"/>
+      <edge id="19920" source="방법" target="인지" weight="0.02730557508766651"/>
+      <edge id="19922" source="방법" target="통제" weight="0.053830135613679886"/>
+      <edge id="19923" source="방법" target="주변" weight="0.045291852205991745"/>
+      <edge id="19924" source="방법" target="동부" weight="0.036477237939834595"/>
+      <edge id="19925" source="방법" target="원인" weight="0.048893846571445465"/>
+      <edge id="19926" source="방법" target="착용" weight="0.03790022432804108"/>
+      <edge id="19927" source="방법" target="하부" weight="0.04000029340386391"/>
+      <edge id="19928" source="방법" target="구간" weight="0.035334210842847824"/>
+      <edge id="19929" source="방법" target="확보" weight="0.03865192458033562"/>
+      <edge id="19930" source="방법" target="보호" weight="0.029661471024155617"/>
+      <edge id="19931" source="방법" target="안전" weight="0.03058994747698307"/>
+      <edge id="19932" source="방법" target="추락" weight="0.019790736958384514"/>
+      <edge id="19933" source="방법" target="체결" weight="0.022429944947361946"/>
+      <edge id="19934" source="위험" target="부주의" weight="0.2353772222995758"/>
+      <edge id="19935" source="위험" target="근로자" weight="0.10437490791082382"/>
+      <edge id="19936" source="위험" target="미흡" weight="0.10593430697917938"/>
+      <edge id="19938" source="위험" target="행동" weight="0.04723392054438591"/>
+      <edge id="19939" source="위험" target="결빙" weight="0.028771212324500084"/>
+      <edge id="19940" source="위험" target="질병" weight="0.024493269622325897"/>
+      <edge id="19941" source="위험" target="불안전" weight="0.08071966469287872"/>
+      <edge id="19942" source="위험" target="방법" weight="0.0338563434779644"/>
+      <edge id="19943" source="위험" target="불량" weight="0.026633048430085182"/>
+      <edge id="19949" source="위험" target="통제" weight="0.06328264623880386"/>
+      <edge id="19950" source="위험" target="주변" weight="0.04919886589050293"/>
+      <edge id="19951" source="위험" target="동부" weight="0.048153478652238846"/>
+      <edge id="19952" source="위험" target="원인" weight="0.05660435929894447"/>
+      <edge id="19953" source="위험" target="착용" weight="0.04461865872144699"/>
+      <edge id="19954" source="위험" target="하부" weight="0.03968019783496857"/>
+      <edge id="19955" source="위험" target="구간" weight="0.03775813430547714"/>
+      <edge id="19956" source="위험" target="확보" weight="0.048273634165525436"/>
+      <edge id="19957" source="위험" target="보호" weight="0.03852624073624611"/>
+      <edge id="19958" source="위험" target="안전" weight="0.024995001032948494"/>
+      <edge id="19959" source="위험" target="체결" weight="0.01796015352010727"/>
+      <edge id="19960" source="불량" target="자재" weight="0.12326093018054962"/>
+      <edge id="19961" source="불량" target="운반" weight="0.06241164356470108"/>
+      <edge id="19962" source="불량" target="비계" weight="0.029675694182515144"/>
+      <edge id="19963" source="불량" target="설치" weight="0.08979938551783562"/>
+      <edge id="19964" source="불량" target="부주의" weight="0.22729556262493134"/>
+      <edge id="19965" source="불량" target="근로자" weight="0.14616191387176514"/>
+      <edge id="19966" source="불량" target="미흡" weight="0.07275515049695969"/>
+      <edge id="19968" source="불량" target="행동" weight="0.08572367578744888"/>
+      <edge id="19969" source="불량" target="결빙" weight="0.03877386450767517"/>
+      <edge id="19970" source="불량" target="질병" weight="0.03877386450767517"/>
+      <edge id="19971" source="불량" target="불안전" weight="0.07667883485555649"/>
+      <edge id="19972" source="불량" target="방법" weight="0.022881682962179184"/>
+      <edge id="19973" source="불량" target="위험" weight="0.026633048430085182"/>
+      <edge id="19980" source="불량" target="균형" weight="0.08356247842311859"/>
+      <edge id="19982" source="불량" target="년월" weight="0.06026403605937958"/>
+      <edge id="19983" source="불량" target="트러스" weight="0.049930062144994736"/>
+      <edge id="19985" source="불량" target="혼합" weight="0.04092125967144966"/>
+      <edge id="19986" source="불량" target="소속" weight="0.04092125967144966"/>
+      <edge id="19987" source="불량" target="압송" weight="0.04092125967144966"/>
+      <edge id="19989" source="불량" target="통제" weight="0.043660059571266174"/>
+      <edge id="19990" source="불량" target="주변" weight="0.052936993539333344"/>
+      <edge id="19991" source="불량" target="원인" weight="0.03904246538877487"/>
+      <edge id="19992" source="불량" target="확보" weight="0.033062584698200226"/>
+      <edge id="20038" source="돌풍" target="자재" weight="0.6041783094406128"/>
+      <edge id="20039" source="돌풍" target="철근" weight="0.16059578955173492"/>
+      <edge id="20040" source="돌풍" target="부주의" weight="0.4127136766910553"/>
+      <edge id="20043" source="돌풍" target="기술" weight="0.15470565855503082"/>
+      <edge id="20045" source="돌풍" target="임목" weight="0.14179080724716187"/>
+      <edge id="20046" source="돌풍" target="중량" weight="0.12486308068037033"/>
+      <edge id="20047" source="돌풍" target="렌탈" weight="0.12985645234584808"/>
+      <edge id="20048" source="돌풍" target="철골" weight="0.21072646975517273"/>
+      <edge id="20049" source="돌풍" target="난간" weight="0.1159919798374176"/>
+      <edge id="20050" source="돌풍" target="발판" weight="0.10038426518440247"/>
+      <edge id="20056" source="기술" target="자재" weight="0.5828981399536133"/>
+      <edge id="20057" source="기술" target="철근" weight="0.15242508053779602"/>
+      <edge id="20058" source="기술" target="부주의" weight="0.3917716145515442"/>
+      <edge id="20061" source="기술" target="돌풍" weight="0.15470565855503082"/>
+      <edge id="20063" source="기술" target="임목" weight="0.1364995390176773"/>
+      <edge id="20064" source="기술" target="중량" weight="0.12006665021181107"/>
+      <edge id="20065" source="기술" target="렌탈" weight="0.12470603734254837"/>
+      <edge id="20066" source="기술" target="철골" weight="0.20237429440021515"/>
+      <edge id="20067" source="기술" target="난간" weight="0.11113273352384567"/>
+      <edge id="20068" source="기술" target="발판" weight="0.09606976807117462"/>
+      <edge id="20116" source="임목" target="자재" weight="0.5315751433372498"/>
+      <edge id="20117" source="임목" target="철근" weight="0.13326984643936157"/>
+      <edge id="20118" source="임목" target="부주의" weight="0.34110215306282043"/>
+      <edge id="20121" source="임목" target="돌풍" weight="0.14179080724716187"/>
+      <edge id="20122" source="임목" target="기술" weight="0.1364995390176773"/>
+      <edge id="20124" source="임목" target="중량" weight="0.10849661380052567"/>
+      <edge id="20125" source="임목" target="렌탈" weight="0.11232378333806992"/>
+      <edge id="20126" source="임목" target="철골" weight="0.18327562510967255"/>
+      <edge id="20127" source="임목" target="난간" weight="0.09952749311923981"/>
+      <edge id="20128" source="임목" target="발판" weight="0.08579905331134796"/>
+      <edge id="20134" source="중량" target="자재" weight="0.2771305441856384"/>
+      <edge id="20135" source="중량" target="철근" weight="0.12219872325658798"/>
+      <edge id="20136" source="중량" target="부주의" weight="0.2953042685985565"/>
+      <edge id="20139" source="중량" target="돌풍" weight="0.12486308068037033"/>
+      <edge id="20140" source="중량" target="기술" weight="0.12006665021181107"/>
+      <edge id="20142" source="중량" target="임목" weight="0.10849661380052567"/>
+      <edge id="20143" source="중량" target="렌탈" weight="0.1003146693110466"/>
+      <edge id="20144" source="중량" target="철골" weight="0.16441600024700165"/>
+      <edge id="20145" source="중량" target="난간" weight="0.0895719975233078"/>
+      <edge id="20146" source="중량" target="발판" weight="0.07555357366800308"/>
+      <edge id="20152" source="렌탈" target="자재" weight="0.17354197800159454"/>
+      <edge id="20153" source="렌탈" target="철근" weight="0.13207027316093445"/>
+      <edge id="20154" source="렌탈" target="부주의" weight="0.3003386855125427"/>
+      <edge id="20157" source="렌탈" target="돌풍" weight="0.12985645234584808"/>
+      <edge id="20158" source="렌탈" target="기술" weight="0.12470603734254837"/>
+      <edge id="20160" source="렌탈" target="임목" weight="0.11232378333806992"/>
+      <edge id="20161" source="렌탈" target="중량" weight="0.1003146693110466"/>
+      <edge id="20162" source="렌탈" target="철골" weight="0.17548681795597076"/>
+      <edge id="20163" source="렌탈" target="난간" weight="0.09513363987207413"/>
+      <edge id="20164" source="렌탈" target="발판" weight="0.07862284034490585"/>
+      <edge id="20170" source="철골" target="이동" weight="0.3063233494758606"/>
+      <edge id="20171" source="철골" target="자재" weight="0.3165102005004883"/>
+      <edge id="20172" source="철골" target="철근" weight="0.24852514266967773"/>
+      <edge id="20173" source="철골" target="설치" weight="0.25885431468486786"/>
+      <edge id="20174" source="철골" target="부주의" weight="0.4772883355617523"/>
+      <edge id="20177" source="철골" target="돌풍" weight="0.21072646975517273"/>
+      <edge id="20178" source="철골" target="기술" weight="0.20237429440021515"/>
+      <edge id="20180" source="철골" target="임목" weight="0.18327562510967255"/>
+      <edge id="20181" source="철골" target="중량" weight="0.16441600024700165"/>
+      <edge id="20182" source="철골" target="렌탈" weight="0.17548681795597076"/>
+      <edge id="20183" source="철골" target="난간" weight="0.16498872637748718"/>
+      <edge id="20184" source="철골" target="발판" weight="0.14920596778392792"/>
+      <edge id="20190" source="철골" target="안전" weight="0.08710123598575592"/>
+      <edge id="20193" source="철골" target="추락" weight="0.0805579274892807"/>
+      <edge id="20195" source="철골" target="데크" weight="0.07499216496944427"/>
+      <edge id="20196" source="철골" target="바닥" weight="0.07295825332403183"/>
+      <edge id="20197" source="철골" target="체결" weight="0.07269968092441559"/>
+      <edge id="20199" source="난간" target="자재" weight="0.16970235109329224"/>
+      <edge id="20200" source="난간" target="철근" weight="0.12153822928667068"/>
+      <edge id="20201" source="난간" target="부주의" weight="0.2659761905670166"/>
+      <edge id="20204" source="난간" target="돌풍" weight="0.1159919798374176"/>
+      <edge id="20205" source="난간" target="기술" weight="0.11113273352384567"/>
+      <edge id="20207" source="난간" target="임목" weight="0.09952749311923981"/>
+      <edge id="20208" source="난간" target="중량" weight="0.0895719975233078"/>
+      <edge id="20209" source="난간" target="렌탈" weight="0.09513363987207413"/>
+      <edge id="20210" source="난간" target="철골" weight="0.16498872637748718"/>
+      <edge id="20211" source="난간" target="발판" weight="0.07700076699256897"/>
+      <edge id="20217" source="발판" target="자재" weight="0.15326271951198578"/>
+      <edge id="20218" source="발판" target="철근" weight="0.09728369116783142"/>
+      <edge id="20219" source="발판" target="부주의" weight="0.23470550775527954"/>
+      <edge id="20222" source="발판" target="돌풍" weight="0.10038426518440247"/>
+      <edge id="20223" source="발판" target="기술" weight="0.09606976807117462"/>
+      <edge id="20225" source="발판" target="임목" weight="0.08579905331134796"/>
+      <edge id="20226" source="발판" target="중량" weight="0.07555357366800308"/>
+      <edge id="20227" source="발판" target="렌탈" weight="0.07862284034490585"/>
+      <edge id="20228" source="발판" target="철골" weight="0.14920596778392792"/>
+      <edge id="20229" source="발판" target="난간" weight="0.07700076699256897"/>
+      <edge id="20325" source="개인" target="사용" weight="0.056885115802288055"/>
+      <edge id="20326" source="개인" target="자의" weight="0.22268152236938477"/>
+      <edge id="20327" source="개인" target="부주의" weight="0.7051999568939209"/>
+      <edge id="20329" source="개인" target="행동" weight="0.17955297231674194"/>
+      <edge id="20330" source="개인" target="질병" weight="0.046650420874357224"/>
+      <edge id="20331" source="개인" target="불안전" weight="0.16937962174415588"/>
+      <edge id="20337" source="개인" target="부족" weight="0.0998154729604721"/>
+      <edge id="20338" source="개인" target="판단" weight="0.10379461944103241"/>
+      <edge id="20339" source="개인" target="자세" weight="0.09170924127101898"/>
+      <edge id="20340" source="개인" target="평재" weight="0.09076565504074097"/>
+      <edge id="20341" source="개인" target="인지" weight="0.09375067800283432"/>
+      <edge id="20342" source="개인" target="주변" weight="0.06294028460979462"/>
+      <edge id="20343" source="개인" target="구간" weight="0.09293432533740997"/>
+      <edge id="20370" source="부족" target="사용" weight="0.051580753177404404"/>
+      <edge id="20371" source="부족" target="자의" weight="0.20346599817276"/>
+      <edge id="20372" source="부족" target="부주의" weight="0.5987927913665771"/>
+      <edge id="20374" source="부족" target="행동" weight="0.11773701012134552"/>
+      <edge id="20375" source="부족" target="질병" weight="0.038100503385066986"/>
+      <edge id="20376" source="부족" target="불안전" weight="0.12194737792015076"/>
+      <edge id="20381" source="부족" target="개인" weight="0.0998154729604721"/>
+      <edge id="20383" source="부족" target="판단" weight="0.06941276043653488"/>
+      <edge id="20384" source="부족" target="자세" weight="0.07627213001251221"/>
+      <edge id="20385" source="부족" target="평재" weight="0.07265261560678482"/>
+      <edge id="20386" source="부족" target="인지" weight="0.06335876882076263"/>
+      <edge id="20387" source="부족" target="구간" weight="0.05127216503024101"/>
+      <edge id="20388" source="부족" target="추락" weight="0.0362493135035038"/>
+      <edge id="20389" source="판단" target="사용" weight="0.0430978387594223"/>
+      <edge id="20390" source="판단" target="자의" weight="0.1860731840133667"/>
+      <edge id="20391" source="판단" target="부주의" weight="0.5757996439933777"/>
+      <edge id="20392" source="판단" target="미흡" weight="0.08234937489032745"/>
+      <edge id="20394" source="판단" target="행동" weight="0.11825116723775864"/>
+      <edge id="20395" source="판단" target="질병" weight="0.03171958774328232"/>
+      <edge id="20396" source="판단" target="불안전" weight="0.10594973713159561"/>
+      <edge id="20401" source="판단" target="개인" weight="0.10379461944103241"/>
+      <edge id="20403" source="판단" target="부족" weight="0.06941276043653488"/>
+      <edge id="20404" source="판단" target="자세" weight="0.06230366230010986"/>
+      <edge id="20405" source="판단" target="평재" weight="0.05864991620182991"/>
+      <edge id="20406" source="판단" target="인지" weight="0.06613689661026001"/>
+      <edge id="20408" source="판단" target="주변" weight="0.05157523229718208"/>
+      <edge id="20409" source="판단" target="구간" weight="0.06769532710313797"/>
+      <edge id="20410" source="판단" target="추락" weight="0.029091082513332367"/>
+      <edge id="20411" source="자세" target="사용" weight="0.04720577597618103"/>
+      <edge id="20412" source="자세" target="자의" weight="0.1939728558063507"/>
+      <edge id="20413" source="자세" target="부주의" weight="0.5660052299499512"/>
+      <edge id="20415" source="자세" target="행동" weight="0.10371457040309906"/>
+      <edge id="20416" source="자세" target="질병" weight="0.03438645973801613"/>
+      <edge id="20417" source="자세" target="불안전" weight="0.10581736266613007"/>
+      <edge id="20422" source="자세" target="개인" weight="0.09170924127101898"/>
+      <edge id="20424" source="자세" target="부족" weight="0.07627213001251221"/>
+      <edge id="20425" source="자세" target="판단" weight="0.06230366230010986"/>
+      <edge id="20426" source="자세" target="평재" weight="0.06395617872476578"/>
+      <edge id="20427" source="자세" target="인지" weight="0.056923724710941315"/>
+      <edge id="20428" source="자세" target="구간" weight="0.04637095704674721"/>
+      <edge id="20429" source="자세" target="추락" weight="0.032421376556158066"/>
+      <edge id="20430" source="평재" target="사용" weight="0.03647460415959358"/>
+      <edge id="20431" source="평재" target="자의" weight="0.1895362138748169"/>
+      <edge id="20432" source="평재" target="부주의" weight="0.5556681156158447"/>
+      <edge id="20434" source="평재" target="행동" weight="0.09610942751169205"/>
+      <edge id="20435" source="평재" target="질병" weight="0.027511803433299065"/>
+      <edge id="20436" source="평재" target="불안전" weight="0.099795863032341"/>
+      <edge id="20441" source="평재" target="개인" weight="0.09076565504074097"/>
+      <edge id="20443" source="평재" target="부족" weight="0.07265261560678482"/>
+      <edge id="20444" source="평재" target="판단" weight="0.05864991620182991"/>
+      <edge id="20445" source="평재" target="자세" weight="0.06395617872476578"/>
+      <edge id="20446" source="평재" target="인지" weight="0.05085265636444092"/>
+      <edge id="20447" source="평재" target="구간" weight="0.041566502302885056"/>
+      <edge id="20448" source="인지" target="사용" weight="0.04504682868719101"/>
+      <edge id="20449" source="인지" target="자의" weight="0.2560015618801117"/>
+      <edge id="20450" source="인지" target="부주의" weight="0.5526822805404663"/>
+      <edge id="20451" source="인지" target="미흡" weight="0.077621690928936"/>
+      <edge id="20453" source="인지" target="행동" weight="0.10611788183450699"/>
+      <edge id="20454" source="인지" target="질병" weight="0.031957000494003296"/>
+      <edge id="20455" source="인지" target="불안전" weight="0.09317844361066818"/>
+      <edge id="20456" source="인지" target="방법" weight="0.02730557508766651"/>
+      <edge id="20461" source="인지" target="개인" weight="0.09375067800283432"/>
+      <edge id="20463" source="인지" target="부족" weight="0.06335876882076263"/>
+      <edge id="20464" source="인지" target="판단" weight="0.06613689661026001"/>
+      <edge id="20465" source="인지" target="자세" weight="0.056923724710941315"/>
+      <edge id="20466" source="인지" target="평재" weight="0.05085265636444092"/>
+      <edge id="20468" source="인지" target="주변" weight="0.04914223775267601"/>
+      <edge id="20469" source="인지" target="원인" weight="0.0399380661547184"/>
+      <edge id="20470" source="인지" target="하부" weight="0.03614746406674385"/>
+      <edge id="20471" source="인지" target="구간" weight="0.06266748160123825"/>
+      <edge id="20472" source="인지" target="추락" weight="0.03118276409804821"/>
+      <edge id="20553" source="균형" target="이동" weight="0.8310494422912598"/>
+      <edge id="20554" source="균형" target="자재" weight="0.4347822368144989"/>
+      <edge id="20555" source="균형" target="운반" weight="0.25662165880203247"/>
+      <edge id="20556" source="균형" target="비계" weight="0.09842308610677719"/>
+      <edge id="20557" source="균형" target="설치" weight="0.31175147742033005"/>
+      <edge id="20558" source="균형" target="불량" weight="0.08356247842311859"/>
+      <edge id="20563" source="균형" target="년월" weight="0.15703491866588593"/>
+      <edge id="20564" source="균형" target="트러스" weight="0.15543361008167267"/>
+      <edge id="20566" source="균형" target="혼합" weight="0.1406705230474472"/>
+      <edge id="20567" source="균형" target="소속" weight="0.1406705230474472"/>
+      <edge id="20568" source="균형" target="압송" weight="0.1406705230474472"/>
+      <edge id="20600" source="년월" target="이동" weight="0.6589381694793701"/>
+      <edge id="20601" source="년월" target="자재" weight="0.2866751253604889"/>
+      <edge id="20602" source="년월" target="운반" weight="0.16457931697368622"/>
+      <edge id="20603" source="년월" target="비계" weight="0.0630844309926033"/>
+      <edge id="20604" source="년월" target="설치" weight="0.1988643854856491"/>
+      <edge id="20605" source="년월" target="불량" weight="0.06026403605937958"/>
+      <edge id="20609" source="년월" target="균형" weight="0.15703491866588593"/>
+      <edge id="20611" source="년월" target="트러스" weight="0.11022567003965378"/>
+      <edge id="20613" source="년월" target="혼합" weight="0.09815429151058197"/>
+      <edge id="20614" source="년월" target="소속" weight="0.09815429151058197"/>
+      <edge id="20615" source="년월" target="압송" weight="0.09815429151058197"/>
+      <edge id="20620" source="트러스" target="이동" weight="0.6348293423652649"/>
+      <edge id="20621" source="트러스" target="자재" weight="0.27472150325775146"/>
+      <edge id="20622" source="트러스" target="운반" weight="0.15855877101421356"/>
+      <edge id="20623" source="트러스" target="비계" weight="0.05937696993350983"/>
+      <edge id="20624" source="트러스" target="설치" weight="0.1858893670141697"/>
+      <edge id="20625" source="트러스" target="불량" weight="0.049930062144994736"/>
+      <edge id="20629" source="트러스" target="균형" weight="0.15543361008167267"/>
+      <edge id="20631" source="트러스" target="년월" weight="0.11022567003965378"/>
+      <edge id="20633" source="트러스" target="혼합" weight="0.09296707808971405"/>
+      <edge id="20634" source="트러스" target="소속" weight="0.09296707808971405"/>
+      <edge id="20635" source="트러스" target="압송" weight="0.09296707808971405"/>
+      <edge id="20673" source="혼합" target="이동" weight="0.5827245712280273"/>
+      <edge id="20674" source="혼합" target="자재" weight="0.22587093710899353"/>
+      <edge id="20675" source="혼합" target="운반" weight="0.1294875293970108"/>
+      <edge id="20676" source="혼합" target="비계" weight="0.045452266931533813"/>
+      <edge id="20677" source="혼합" target="설치" weight="0.1436142660677433"/>
+      <edge id="20678" source="혼합" target="불량" weight="0.04092125967144966"/>
+      <edge id="20682" source="혼합" target="균형" weight="0.1406705230474472"/>
+      <edge id="20684" source="혼합" target="년월" weight="0.09815429151058197"/>
+      <edge id="20685" source="혼합" target="트러스" weight="0.09296707808971405"/>
+      <edge id="20687" source="혼합" target="소속" weight="0.08063191175460815"/>
+      <edge id="20688" source="혼합" target="압송" weight="0.08063191175460815"/>
+      <edge id="20693" source="소속" target="이동" weight="0.5827245712280273"/>
+      <edge id="20694" source="소속" target="자재" weight="0.22587093710899353"/>
+      <edge id="20695" source="소속" target="운반" weight="0.1294875293970108"/>
+      <edge id="20696" source="소속" target="비계" weight="0.045452266931533813"/>
+      <edge id="20697" source="소속" target="설치" weight="0.1436142660677433"/>
+      <edge id="20698" source="소속" target="불량" weight="0.04092125967144966"/>
+      <edge id="20702" source="소속" target="균형" weight="0.1406705230474472"/>
+      <edge id="20704" source="소속" target="년월" weight="0.09815429151058197"/>
+      <edge id="20705" source="소속" target="트러스" weight="0.09296707808971405"/>
+      <edge id="20707" source="소속" target="혼합" weight="0.08063191175460815"/>
+      <edge id="20708" source="소속" target="압송" weight="0.08063191175460815"/>
+      <edge id="20713" source="압송" target="이동" weight="0.5827245712280273"/>
+      <edge id="20714" source="압송" target="자재" weight="0.22587093710899353"/>
+      <edge id="20715" source="압송" target="운반" weight="0.1294875293970108"/>
+      <edge id="20716" source="압송" target="비계" weight="0.045452266931533813"/>
+      <edge id="20717" source="압송" target="설치" weight="0.1436142660677433"/>
+      <edge id="20718" source="압송" target="불량" weight="0.04092125967144966"/>
+      <edge id="20722" source="압송" target="균형" weight="0.1406705230474472"/>
+      <edge id="20724" source="압송" target="년월" weight="0.09815429151058197"/>
+      <edge id="20725" source="압송" target="트러스" weight="0.09296707808971405"/>
+      <edge id="20727" source="압송" target="혼합" weight="0.08063191175460815"/>
+      <edge id="20728" source="압송" target="소속" weight="0.08063191175460815"/>
+      <edge id="20771" source="보행" target="이동" weight="0.8995762467384338"/>
+      <edge id="20772" source="보행" target="주위" weight="0.430513471364975"/>
+      <edge id="20775" source="보행" target="뒷걸음" weight="0.3348211646080017"/>
+      <edge id="20776" source="보행" target="잔돌" weight="0.3348211646080017"/>
+      <edge id="20777" source="보행" target="바닥상태" weight="0.3348211646080017"/>
+      <edge id="20778" source="보행" target="헛딛음" weight="0.3348211646080017"/>
+      <edge id="20779" source="보행" target="물체" weight="0.32025590538978577"/>
+      <edge id="20780" source="보행" target="지정" weight="0.312195360660553"/>
+      <edge id="20781" source="보행" target="통행" weight="0.3020533621311188"/>
+      <edge id="20784" source="보행" target="바닥" weight="0.19940334558486938"/>
+      <edge id="20785" source="뒷걸음" target="이동" weight="0.6531376838684082"/>
+      <edge id="20786" source="뒷걸음" target="주위" weight="0.30474522709846497"/>
+      <edge id="20789" source="뒷걸음" target="보행" weight="0.3348211646080017"/>
+      <edge id="20790" source="뒷걸음" target="잔돌" weight="0.2709232270717621"/>
+      <edge id="20791" source="뒷걸음" target="바닥상태" weight="0.2709232270717621"/>
+      <edge id="20792" source="뒷걸음" target="헛딛음" weight="0.2709232270717621"/>
+      <edge id="20793" source="뒷걸음" target="물체" weight="0.2564983069896698"/>
+      <edge id="20794" source="뒷걸음" target="지정" weight="0.24842841923236847"/>
+      <edge id="20795" source="뒷걸음" target="통행" weight="0.23794767260551453"/>
+      <edge id="20798" source="뒷걸음" target="바닥" weight="0.13909204304218292"/>
+      <edge id="20799" source="잔돌" target="이동" weight="0.6531376838684082"/>
+      <edge id="20800" source="잔돌" target="주위" weight="0.30474522709846497"/>
+      <edge id="20803" source="잔돌" target="보행" weight="0.3348211646080017"/>
+      <edge id="20804" source="잔돌" target="뒷걸음" weight="0.2709232270717621"/>
+      <edge id="20805" source="잔돌" target="바닥상태" weight="0.2709232270717621"/>
+      <edge id="20806" source="잔돌" target="헛딛음" weight="0.2709232270717621"/>
+      <edge id="20807" source="잔돌" target="물체" weight="0.2564983069896698"/>
+      <edge id="20808" source="잔돌" target="지정" weight="0.24842841923236847"/>
+      <edge id="20809" source="잔돌" target="통행" weight="0.23794767260551453"/>
+      <edge id="20812" source="잔돌" target="바닥" weight="0.13909204304218292"/>
+      <edge id="20813" source="바닥상태" target="이동" weight="0.6531376838684082"/>
+      <edge id="20814" source="바닥상태" target="주위" weight="0.30474522709846497"/>
+      <edge id="20817" source="바닥상태" target="보행" weight="0.3348211646080017"/>
+      <edge id="20818" source="바닥상태" target="뒷걸음" weight="0.2709232270717621"/>
+      <edge id="20819" source="바닥상태" target="잔돌" weight="0.2709232270717621"/>
+      <edge id="20820" source="바닥상태" target="헛딛음" weight="0.2709232270717621"/>
+      <edge id="20821" source="바닥상태" target="물체" weight="0.2564983069896698"/>
+      <edge id="20822" source="바닥상태" target="지정" weight="0.24842841923236847"/>
+      <edge id="20823" source="바닥상태" target="통행" weight="0.23794767260551453"/>
+      <edge id="20826" source="바닥상태" target="바닥" weight="0.13909204304218292"/>
+      <edge id="20827" source="헛딛음" target="이동" weight="0.6531376838684082"/>
+      <edge id="20828" source="헛딛음" target="주위" weight="0.30474522709846497"/>
+      <edge id="20831" source="헛딛음" target="보행" weight="0.3348211646080017"/>
+      <edge id="20832" source="헛딛음" target="뒷걸음" weight="0.2709232270717621"/>
+      <edge id="20833" source="헛딛음" target="잔돌" weight="0.2709232270717621"/>
+      <edge id="20834" source="헛딛음" target="바닥상태" weight="0.2709232270717621"/>
+      <edge id="20835" source="헛딛음" target="물체" weight="0.2564983069896698"/>
+      <edge id="20836" source="헛딛음" target="지정" weight="0.24842841923236847"/>
+      <edge id="20837" source="헛딛음" target="통행" weight="0.23794767260551453"/>
+      <edge id="20840" source="헛딛음" target="바닥" weight="0.13909204304218292"/>
+      <edge id="20841" source="물체" target="이동" weight="0.6021564602851868"/>
+      <edge id="20842" source="물체" target="주위" weight="0.2808155119419098"/>
+      <edge id="20845" source="물체" target="보행" weight="0.32025590538978577"/>
+      <edge id="20846" source="물체" target="뒷걸음" weight="0.2564983069896698"/>
+      <edge id="20847" source="물체" target="잔돌" weight="0.2564983069896698"/>
+      <edge id="20848" source="물체" target="바닥상태" weight="0.2564983069896698"/>
+      <edge id="20849" source="물체" target="헛딛음" weight="0.2564983069896698"/>
+      <edge id="20850" source="물체" target="지정" weight="0.2351548820734024"/>
+      <edge id="20851" source="물체" target="통행" weight="0.22466959059238434"/>
+      <edge id="20854" source="물체" target="바닥" weight="0.12817472219467163"/>
+      <edge id="20855" source="지정" target="이동" weight="0.5710578560829163"/>
+      <edge id="20856" source="지정" target="주위" weight="0.26480773091316223"/>
+      <edge id="20859" source="지정" target="보행" weight="0.312195360660553"/>
+      <edge id="20860" source="지정" target="뒷걸음" weight="0.24842841923236847"/>
+      <edge id="20861" source="지정" target="잔돌" weight="0.24842841923236847"/>
+      <edge id="20862" source="지정" target="바닥상태" weight="0.24842841923236847"/>
+      <edge id="20863" source="지정" target="헛딛음" weight="0.24842841923236847"/>
+      <edge id="20864" source="지정" target="물체" weight="0.2351548820734024"/>
+      <edge id="20865" source="지정" target="통행" weight="0.216599240899086"/>
+      <edge id="20868" source="지정" target="바닥" weight="0.12061944603919983"/>
+      <edge id="20869" source="통행" target="이동" weight="0.5319027900695801"/>
+      <edge id="20870" source="통행" target="주위" weight="0.24500027298927307"/>
+      <edge id="20873" source="통행" target="보행" weight="0.3020533621311188"/>
+      <edge id="20874" source="통행" target="뒷걸음" weight="0.23794767260551453"/>
+      <edge id="20875" source="통행" target="잔돌" weight="0.23794767260551453"/>
+      <edge id="20876" source="통행" target="바닥상태" weight="0.23794767260551453"/>
+      <edge id="20877" source="통행" target="헛딛음" weight="0.23794767260551453"/>
+      <edge id="20878" source="통행" target="물체" weight="0.22466959059238434"/>
+      <edge id="20879" source="통행" target="지정" weight="0.216599240899086"/>
+      <edge id="20882" source="통행" target="바닥" weight="0.11121346056461334"/>
+      <edge id="20938" source="통제" target="미흡" weight="0.2017519623041153"/>
+      <edge id="20939" source="통제" target="방법" weight="0.053830135613679886"/>
+      <edge id="20940" source="통제" target="위험" weight="0.06328264623880386"/>
+      <edge id="20941" source="통제" target="불량" weight="0.043660059571266174"/>
+      <edge id="20943" source="통제" target="주변" weight="0.09560907632112503"/>
+      <edge id="20944" source="통제" target="동부" weight="0.10438568145036697"/>
+      <edge id="20945" source="통제" target="원인" weight="0.104218490421772"/>
+      <edge id="20946" source="통제" target="착용" weight="0.09976177662611008"/>
+      <edge id="20947" source="통제" target="하부" weight="0.09293906390666962"/>
+      <edge id="20948" source="통제" target="구간" weight="0.07419561594724655"/>
+      <edge id="20949" source="통제" target="확보" weight="0.09378864616155624"/>
+      <edge id="20950" source="통제" target="보호" weight="0.09067364782094955"/>
+      <edge id="20951" source="통제" target="안전" weight="0.05881612002849579"/>
+      <edge id="20952" source="통제" target="체결" weight="0.04631434753537178"/>
+      <edge id="20953" source="주변" target="설치" weight="0.12082014977931976"/>
+      <edge id="20954" source="주변" target="미흡" weight="0.16376827657222748"/>
+      <edge id="20955" source="주변" target="행동" weight="0.08065374940633774"/>
+      <edge id="20956" source="주변" target="방법" weight="0.045291852205991745"/>
+      <edge id="20957" source="주변" target="위험" weight="0.04919886589050293"/>
+      <edge id="20958" source="주변" target="불량" weight="0.052936993539333344"/>
+      <edge id="20959" source="주변" target="개인" weight="0.06294028460979462"/>
+      <edge id="20961" source="주변" target="판단" weight="0.05157523229718208"/>
+      <edge id="20962" source="주변" target="인지" weight="0.04914223775267601"/>
+      <edge id="20965" source="주변" target="통제" weight="0.09560907632112503"/>
+      <edge id="20966" source="주변" target="동부" weight="0.08396083861589432"/>
+      <edge id="20967" source="주변" target="원인" weight="0.08489567786455154"/>
+      <edge id="20968" source="주변" target="착용" weight="0.08126881718635559"/>
+      <edge id="20969" source="주변" target="하부" weight="0.07714588195085526"/>
+      <edge id="20970" source="주변" target="구간" weight="0.06995632499456406"/>
+      <edge id="20971" source="주변" target="확보" weight="0.07473225891590118"/>
+      <edge id="20972" source="주변" target="보호" weight="0.07223711907863617"/>
+      <edge id="20973" source="주변" target="안전" weight="0.049899376928806305"/>
+      <edge id="20975" source="주변" target="체결" weight="0.03922940418124199"/>
+      <edge id="20976" source="동부" target="미흡" weight="0.1771329790353775"/>
+      <edge id="20977" source="동부" target="방법" weight="0.036477237939834595"/>
+      <edge id="20978" source="동부" target="위험" weight="0.048153478652238846"/>
+      <edge id="20980" source="동부" target="통제" weight="0.10438568145036697"/>
+      <edge id="20981" source="동부" target="주변" weight="0.08396083861589432"/>
+      <edge id="20982" source="동부" target="원인" weight="0.09106828272342682"/>
+      <edge id="20983" source="동부" target="착용" weight="0.09039724618196487"/>
+      <edge id="20984" source="동부" target="하부" weight="0.0819416418671608"/>
+      <edge id="20985" source="동부" target="구간" weight="0.06341492384672165"/>
+      <edge id="20986" source="동부" target="확보" weight="0.08190864324569702"/>
+      <edge id="20987" source="동부" target="보호" weight="0.08220933377742767"/>
+      <edge id="20988" source="동부" target="안전" weight="0.046793755143880844"/>
+      <edge id="20989" source="동부" target="체결" weight="0.03620310500264168"/>
+      <edge id="20990" source="원인" target="미흡" weight="0.17856191098690033"/>
+      <edge id="20991" source="원인" target="방법" weight="0.048893846571445465"/>
+      <edge id="20992" source="원인" target="위험" weight="0.05660435929894447"/>
+      <edge id="20993" source="원인" target="불량" weight="0.03904246538877487"/>
+      <edge id="20994" source="원인" target="인지" weight="0.0399380661547184"/>
+      <edge id="20996" source="원인" target="통제" weight="0.104218490421772"/>
+      <edge id="20997" source="원인" target="주변" weight="0.08489567786455154"/>
+      <edge id="20998" source="원인" target="동부" weight="0.09106828272342682"/>
+      <edge id="20999" source="원인" target="착용" weight="0.08751649409532547"/>
+      <edge id="21000" source="원인" target="하부" weight="0.0814167931675911"/>
+      <edge id="21001" source="원인" target="구간" weight="0.06605391949415207"/>
+      <edge id="21002" source="원인" target="확보" weight="0.08254613727331161"/>
+      <edge id="21003" source="원인" target="보호" weight="0.07833888381719589"/>
+      <edge id="21004" source="원인" target="안전" weight="0.05284133553504944"/>
+      <edge id="21005" source="원인" target="체결" weight="0.04182983934879303"/>
+      <edge id="21006" source="착용" target="미흡" weight="0.16811104118824005"/>
+      <edge id="21007" source="착용" target="방법" weight="0.03790022432804108"/>
+      <edge id="21008" source="착용" target="위험" weight="0.04461865872144699"/>
+      <edge id="21010" source="착용" target="통제" weight="0.09976177662611008"/>
+      <edge id="21011" source="착용" target="주변" weight="0.08126881718635559"/>
+      <edge id="21012" source="착용" target="동부" weight="0.09039724618196487"/>
+      <edge id="21013" source="착용" target="원인" weight="0.08751649409532547"/>
+      <edge id="21014" source="착용" target="하부" weight="0.08140068501234055"/>
+      <edge id="21015" source="착용" target="구간" weight="0.06234557554125786"/>
+      <edge id="21016" source="착용" target="확보" weight="0.07713071256875992"/>
+      <edge id="21017" source="착용" target="보호" weight="0.07780850678682327"/>
+      <edge id="21018" source="착용" target="안전" weight="0.05107828229665756"/>
+      <edge id="21019" source="착용" target="체결" weight="0.04088638350367546"/>
+      <edge id="21020" source="하부" target="미흡" weight="0.15436792373657227"/>
+      <edge id="21021" source="하부" target="방법" weight="0.04000029340386391"/>
+      <edge id="21022" source="하부" target="위험" weight="0.03968019783496857"/>
+      <edge id="21023" source="하부" target="인지" weight="0.03614746406674385"/>
+      <edge id="21025" source="하부" target="통제" weight="0.09293906390666962"/>
+      <edge id="21026" source="하부" target="주변" weight="0.07714588195085526"/>
+      <edge id="21027" source="하부" target="동부" weight="0.0819416418671608"/>
+      <edge id="21028" source="하부" target="원인" weight="0.0814167931675911"/>
+      <edge id="21029" source="하부" target="착용" weight="0.08140068501234055"/>
+      <edge id="21030" source="하부" target="구간" weight="0.059236712753772736"/>
+      <edge id="21031" source="하부" target="확보" weight="0.0696863979101181"/>
+      <edge id="21032" source="하부" target="보호" weight="0.07039116322994232"/>
+      <edge id="21033" source="하부" target="안전" weight="0.052387870848178864"/>
+      <edge id="21034" source="하부" target="체결" weight="0.0419500470161438"/>
+      <edge id="21035" source="구간" target="사용" weight="0.03658817335963249"/>
+      <edge id="21036" source="구간" target="미흡" weight="0.12785685062408447"/>
+      <edge id="21037" source="구간" target="행동" weight="0.10965336114168167"/>
+      <edge id="21038" source="구간" target="불안전" weight="0.08638924360275269"/>
+      <edge id="21039" source="구간" target="방법" weight="0.035334210842847824"/>
+      <edge id="21040" source="구간" target="위험" weight="0.03775813430547714"/>
+      <edge id="21042" source="구간" target="개인" weight="0.09293432533740997"/>
+      <edge id="21044" source="구간" target="부족" weight="0.05127216503024101"/>
+      <edge id="21045" source="구간" target="판단" weight="0.06769532710313797"/>
+      <edge id="21046" source="구간" target="자세" weight="0.04637095704674721"/>
+      <edge id="21047" source="구간" target="평재" weight="0.041566502302885056"/>
+      <edge id="21048" source="구간" target="인지" weight="0.06266748160123825"/>
+      <edge id="21050" source="구간" target="통제" weight="0.07419561594724655"/>
+      <edge id="21051" source="구간" target="주변" weight="0.06995632499456406"/>
+      <edge id="21052" source="구간" target="동부" weight="0.06341492384672165"/>
+      <edge id="21053" source="구간" target="원인" weight="0.06605391949415207"/>
+      <edge id="21054" source="구간" target="착용" weight="0.06234557554125786"/>
+      <edge id="21055" source="구간" target="하부" weight="0.059236712753772736"/>
+      <edge id="21056" source="구간" target="확보" weight="0.05702689290046692"/>
+      <edge id="21057" source="구간" target="보호" weight="0.05429418757557869"/>
+      <edge id="21058" source="구간" target="안전" weight="0.04018701985478401"/>
+      <edge id="21059" source="구간" target="추락" weight="0.028251856565475464"/>
+      <edge id="21060" source="구간" target="체결" weight="0.03210854157805443"/>
+      <edge id="21061" source="확보" target="미흡" weight="0.15832525491714478"/>
+      <edge id="21062" source="확보" target="방법" weight="0.03865192458033562"/>
+      <edge id="21063" source="확보" target="위험" weight="0.048273634165525436"/>
+      <edge id="21064" source="확보" target="불량" weight="0.033062584698200226"/>
+      <edge id="21066" source="확보" target="통제" weight="0.09378864616155624"/>
+      <edge id="21067" source="확보" target="주변" weight="0.07473225891590118"/>
+      <edge id="21068" source="확보" target="동부" weight="0.08190864324569702"/>
+      <edge id="21069" source="확보" target="원인" weight="0.08254613727331161"/>
+      <edge id="21070" source="확보" target="착용" weight="0.07713071256875992"/>
+      <edge id="21071" source="확보" target="하부" weight="0.0696863979101181"/>
+      <edge id="21072" source="확보" target="구간" weight="0.05702689290046692"/>
+      <edge id="21073" source="확보" target="보호" weight="0.06887637078762054"/>
+      <edge id="21074" source="확보" target="안전" weight="0.041905321180820465"/>
+      <edge id="21075" source="확보" target="체결" weight="0.03228737786412239"/>
+      <edge id="21076" source="보호" target="미흡" weight="0.15064862370491028"/>
+      <edge id="21077" source="보호" target="방법" weight="0.029661471024155617"/>
+      <edge id="21078" source="보호" target="위험" weight="0.03852624073624611"/>
+      <edge id="21080" source="보호" target="통제" weight="0.09067364782094955"/>
+      <edge id="21081" source="보호" target="주변" weight="0.07223711907863617"/>
+      <edge id="21082" source="보호" target="동부" weight="0.08220933377742767"/>
+      <edge id="21083" source="보호" target="원인" weight="0.07833888381719589"/>
+      <edge id="21084" source="보호" target="착용" weight="0.07780850678682327"/>
+      <edge id="21085" source="보호" target="하부" weight="0.07039116322994232"/>
+      <edge id="21086" source="보호" target="구간" weight="0.05429418757557869"/>
+      <edge id="21087" source="보호" target="확보" weight="0.06887637078762054"/>
+      <edge id="21088" source="보호" target="안전" weight="0.04071449860930443"/>
+      <edge id="21089" source="보호" target="체결" weight="0.031694140285253525"/>
+      <edge id="21119" source="안전" target="이동" weight="0.14298586547374725"/>
+      <edge id="21120" source="안전" target="자재" weight="0.15491870045661926"/>
+      <edge id="21121" source="안전" target="철근" weight="0.06748849153518677"/>
+      <edge id="21122" source="안전" target="설치" weight="0.12179530039429665"/>
+      <edge id="21123" source="안전" target="손가락" weight="0.02487938292324543"/>
+      <edge id="21124" source="안전" target="배관" weight="0.011728187091648579"/>
+      <edge id="21125" source="안전" target="배근" weight="0.013720819726586342"/>
+      <edge id="21126" source="안전" target="미흡" weight="0.09524920582771301"/>
+      <edge id="21127" source="안전" target="방법" weight="0.03058994747698307"/>
+      <edge id="21128" source="안전" target="위험" weight="0.024995001032948494"/>
+      <edge id="21130" source="안전" target="철골" weight="0.08710123598575592"/>
+      <edge id="21136" source="안전" target="통제" weight="0.05881612002849579"/>
+      <edge id="21137" source="안전" target="주변" weight="0.049899376928806305"/>
+      <edge id="21138" source="안전" target="동부" weight="0.046793755143880844"/>
+      <edge id="21139" source="안전" target="원인" weight="0.05284133553504944"/>
+      <edge id="21140" source="안전" target="착용" weight="0.05107828229665756"/>
+      <edge id="21141" source="안전" target="하부" weight="0.052387870848178864"/>
+      <edge id="21142" source="안전" target="구간" weight="0.04018701985478401"/>
+      <edge id="21143" source="안전" target="확보" weight="0.041905321180820465"/>
+      <edge id="21144" source="안전" target="보호" weight="0.04071449860930443"/>
+      <edge id="21148" source="안전" target="추락" weight="0.02139054611325264"/>
+      <edge id="21150" source="안전" target="데크" weight="0.023513948544859886"/>
+      <edge id="21151" source="안전" target="바닥" weight="0.033935174345970154"/>
+      <edge id="21152" source="안전" target="체결" weight="0.03327741101384163"/>
+      <edge id="21229" source="추락" target="이동" weight="0.12989923357963562"/>
+      <edge id="21230" source="추락" target="자재" weight="0.11249411851167679"/>
+      <edge id="21231" source="추락" target="운반" weight="0.050415899604558945"/>
+      <edge id="21232" source="추락" target="비계" weight="0.038334112614393234"/>
+      <edge id="21233" source="추락" target="사용" weight="0.0361718013882637"/>
+      <edge id="21234" source="추락" target="철근" weight="0.06094517931342125"/>
+      <edge id="21235" source="추락" target="설치" weight="0.08901857770979404"/>
+      <edge id="21236" source="추락" target="단독" weight="0.020082850009202957"/>
+      <edge id="21237" source="추락" target="손가락" weight="0.028851477429270744"/>
+      <edge id="21238" source="추락" target="배관" weight="0.008830701932311058"/>
+      <edge id="21239" source="추락" target="배근" weight="0.012074451893568039"/>
+      <edge id="21240" source="추락" target="행동" weight="0.04663534834980965"/>
+      <edge id="21241" source="추락" target="질병" weight="0.02071603387594223"/>
+      <edge id="21242" source="추락" target="불안전" weight="0.04291805624961853"/>
+      <edge id="21243" source="추락" target="방법" weight="0.019790736958384514"/>
+      <edge id="21245" source="추락" target="철골" weight="0.0805579274892807"/>
+      <edge id="21248" source="추락" target="부족" weight="0.0362493135035038"/>
+      <edge id="21249" source="추락" target="판단" weight="0.029091082513332367"/>
+      <edge id="21250" source="추락" target="자세" weight="0.032421376556158066"/>
+      <edge id="21251" source="추락" target="인지" weight="0.03118276409804821"/>
+      <edge id="21257" source="추락" target="구간" weight="0.028251856565475464"/>
+      <edge id="21259" source="추락" target="안전" weight="0.02139054611325264"/>
+      <edge id="21263" source="추락" target="데크" weight="0.02638707496225834"/>
+      <edge id="21264" source="추락" target="바닥" weight="0.030663520097732544"/>
+      <edge id="21265" source="추락" target="체결" weight="0.01827215403318405"/>
+      <edge id="21305" source="데크" target="이동" weight="0.11876771599054337"/>
+      <edge id="21306" source="데크" target="자재" weight="0.13070055842399597"/>
+      <edge id="21307" source="데크" target="비계" weight="0.021439149975776672"/>
+      <edge id="21308" source="데크" target="사용" weight="0.028130661696195602"/>
+      <edge id="21309" source="데크" target="철근" weight="0.0355515256524086"/>
+      <edge id="21310" source="데크" target="설치" weight="0.10363169386982918"/>
+      <edge id="21311" source="데크" target="단독" weight="0.020477809011936188"/>
+      <edge id="21312" source="데크" target="손가락" weight="0.03044641949236393"/>
+      <edge id="21313" source="데크" target="배관" weight="0.011145515367388725"/>
+      <edge id="21314" source="데크" target="배근" weight="0.01247589010745287"/>
+      <edge id="21316" source="데크" target="철골" weight="0.07499216496944427"/>
+      <edge id="21322" source="데크" target="안전" weight="0.023513948544859886"/>
+      <edge id="21325" source="데크" target="추락" weight="0.02638707496225834"/>
+      <edge id="21327" source="데크" target="바닥" weight="0.02788063883781433"/>
+      <edge id="21328" source="데크" target="체결" weight="0.020681271329522133"/>
+      <edge id="21330" source="바닥" target="이동" weight="0.1782975196838379"/>
+      <edge id="21331" source="바닥" target="자재" weight="0.12663273513317108"/>
+      <edge id="21332" source="바닥" target="철근" weight="0.05334550887346268"/>
+      <edge id="21333" source="바닥" target="주위" weight="0.06513753533363342"/>
+      <edge id="21334" source="바닥" target="설치" weight="0.10058082640171051"/>
+      <edge id="21336" source="바닥" target="철골" weight="0.07295825332403183"/>
+      <edge id="21341" source="바닥" target="보행" weight="0.19940334558486938"/>
+      <edge id="21342" source="바닥" target="뒷걸음" weight="0.13909204304218292"/>
+      <edge id="21343" source="바닥" target="잔돌" weight="0.13909204304218292"/>
+      <edge id="21344" source="바닥" target="바닥상태" weight="0.13909204304218292"/>
+      <edge id="21345" source="바닥" target="헛딛음" weight="0.13909204304218292"/>
+      <edge id="21346" source="바닥" target="물체" weight="0.12817472219467163"/>
+      <edge id="21347" source="바닥" target="지정" weight="0.12061944603919983"/>
+      <edge id="21348" source="바닥" target="통행" weight="0.11121346056461334"/>
+      <edge id="21351" source="바닥" target="안전" weight="0.033935174345970154"/>
+      <edge id="21354" source="바닥" target="추락" weight="0.030663520097732544"/>
+      <edge id="21356" source="바닥" target="데크" weight="0.02788063883781433"/>
+      <edge id="21357" source="바닥" target="체결" weight="0.026734398677945137"/>
+      <edge id="21359" source="체결" target="이동" weight="0.11418274790048599"/>
+      <edge id="21360" source="체결" target="자재" weight="0.1261155903339386"/>
+      <edge id="21361" source="체결" target="철근" weight="0.05308693274855614"/>
+      <edge id="21362" source="체결" target="설치" weight="0.05131597816944122"/>
+      <edge id="21363" source="체결" target="손가락" weight="0.021020939573645592"/>
+      <edge id="21364" source="체결" target="배관" weight="0.009412079118192196"/>
+      <edge id="21365" source="체결" target="배근" weight="0.009182716719806194"/>
+      <edge id="21366" source="체결" target="미흡" weight="0.07398062944412231"/>
+      <edge id="21367" source="체결" target="방법" weight="0.022429944947361946"/>
+      <edge id="21368" source="체결" target="위험" weight="0.01796015352010727"/>
+      <edge id="21370" source="체결" target="철골" weight="0.07269968092441559"/>
+      <edge id="21376" source="체결" target="통제" weight="0.04631434753537178"/>
+      <edge id="21377" source="체결" target="주변" weight="0.03922940418124199"/>
+      <edge id="21378" source="체결" target="동부" weight="0.03620310500264168"/>
+      <edge id="21379" source="체결" target="원인" weight="0.04182983934879303"/>
+      <edge id="21380" source="체결" target="착용" weight="0.04088638350367546"/>
+      <edge id="21381" source="체결" target="하부" weight="0.0419500470161438"/>
+      <edge id="21382" source="체결" target="구간" weight="0.03210854157805443"/>
+      <edge id="21383" source="체결" target="확보" weight="0.03228737786412239"/>
+      <edge id="21384" source="체결" target="보호" weight="0.031694140285253525"/>
+      <edge id="21386" source="체결" target="안전" weight="0.03327741101384163"/>
+      <edge id="21389" source="체결" target="추락" weight="0.01827215403318405"/>
+      <edge id="21391" source="체결" target="데크" weight="0.020681271329522133"/>
+      <edge id="21392" source="체결" target="바닥" weight="0.026734398677945137"/>
+    </edges>
+  </graph>
+</gexf>

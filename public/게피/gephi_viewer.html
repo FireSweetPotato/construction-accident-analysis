@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gephi 네트워크 시각화</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/plugins/sigma.parsers.gexf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/plugins/sigma.layout.forceAtlas2.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1000;
+            width: 200px;
+        }
+        #network {
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="controls"></div>
+        <div id="network"></div>
+    </div>
+
+    <script>
+        let sig = null;
+        let currentFile = null;
+        let minDegree = Infinity;
+        let maxDegree = -Infinity;
+        let baseSize = 5;
+        let isClickHighlighted = false;
+        let originalColors = new Map();
+        let originalSizes = new Map();
+
+        // URL 파라미터에서 파일 경로 추출
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function calculateNodeSizes(graph) {
+            // degree 값 찾기
+            minDegree = Infinity;
+            maxDegree = -Infinity;
+            graph.nodes().forEach(node => {
+                const degree = graph.degree(node.id);
+                minDegree = Math.min(minDegree, degree);
+                maxDegree = Math.max(maxDegree, degree);
+            });
+
+            // 노드 크기 계산 및 적용
+            const sizeRatio = 4; // 최대/최소 크기 비율
+
+            graph.nodes().forEach(node => {
+                const degree = graph.degree(node.id);
+                if (maxDegree === minDegree) {
+                    node.size = baseSize;
+                } else {
+                    // 선형 보간법으로 크기 계산
+                    const normalizedDegree = (degree - minDegree) / (maxDegree - minDegree);
+                    node.size = baseSize * (1 + (sizeRatio - 1) * normalizedDegree);
+                }
+            });
+        }
+
+        function updateEdgeColors(graph) {
+            graph.edges().forEach(edge => {
+                const sourceNode = graph.nodes(edge.source);
+                const targetNode = graph.nodes(edge.target);
+                edge.color = sourceNode.color;
+            });
+        }
+
+        function saveOriginalColorsAndSizes(graph) {
+            originalColors.clear();
+            originalSizes.clear();
+            graph.nodes().forEach(node => {
+                originalColors.set(node.id, node.color);
+            });
+            graph.edges().forEach(edge => {
+                originalColors.set(edge.id, edge.color);
+                originalSizes.set(edge.id, edge.size);
+            });
+        }
+
+        function highlightConnectedElements(nodeId) {
+            const graph = sig.graph;
+            const connectedNodes = new Set();
+            const connectedEdges = new Set();
+
+            // 연결된 노드와 엣지 찾기
+            graph.edges().forEach(edge => {
+                if (edge.source === nodeId || edge.target === nodeId) {
+                    connectedNodes.add(edge.source);
+                    connectedNodes.add(edge.target);
+                    connectedEdges.add(edge.id);
+                }
+            });
+
+            // 모든 노드와 엣지 투명하게 만들기
+            graph.nodes().forEach(node => {
+                if (!connectedNodes.has(node.id)) {
+                    node.color = '#ccc';
+                } else {
+                    node.color = originalColors.get(node.id);
+                }
+            });
+
+            graph.edges().forEach(edge => {
+                if (!connectedEdges.has(edge.id)) {
+                    edge.color = '#ffffff';
+                    edge.size = originalSizes.get(edge.id);
+                } else {
+                    edge.color = originalColors.get(edge.id);
+                    edge.size = originalSizes.get(edge.id) * 3;
+                }
+            });
+
+            sig.refresh();
+        }
+
+        function resetHighlight() {
+            if (!sig) return;
+            
+            const graph = sig.graph;
+            graph.nodes().forEach(node => {
+                node.color = originalColors.get(node.id);
+            });
+
+            graph.edges().forEach(edge => {
+                edge.color = originalColors.get(edge.id);
+                edge.size = originalSizes.get(edge.id);
+            });
+
+            sig.refresh();
+        }
+
+        function loadGexfFile(file) {
+            if (sig) {
+                sig.kill();
+            }
+
+            sigma.parsers.gexf(file, {
+                container: 'network',
+                settings: {
+                    defaultNodeColor: '#ec5148',
+                    defaultEdgeColor: '#666',
+                    labelThreshold: 5,
+                    minNodeSize: 1,
+                    maxNodeSize: 10,
+                    minEdgeSize: 0.1,
+                    maxEdgeSize: 2,
+                    edgeColor: 'default',
+                    edgeOpacity: 0.3
+                }
+            }, function(s) {
+                sig = s;
+                currentFile = file;
+
+                // degree 기반 노드 크기 계산
+                calculateNodeSizes(s.graph);
+
+                // 엣지 색상 업데이트
+                updateEdgeColors(s.graph);
+
+                // 원래 색상과 크기 저장
+                saveOriginalColorsAndSizes(s.graph);
+
+                // ForceAtlas2 레이아웃 적용
+                sig.startForceAtlas2({
+                    worker: true,
+                    outboundAttractionDistribution: true,
+                    adjustSizes: true,
+                    edgeWeightInfluence: 0,
+                    scalingRatio: 10,
+                    strongGravityMode: true,
+                    gravity: 1,
+                    slowDown: 10,
+                    barnesHutOptimize: true
+                });
+
+                // 5초 후 레이아웃 중지
+                setTimeout(function() {
+                    sig.stopForceAtlas2();
+                }, 5000);
+
+                // 노드 마우스 오버 이벤트
+                sig.bind('overNode', function(e) {
+                    if (!isClickHighlighted) {
+                        highlightConnectedElements(e.data.node.id);
+                    }
+                });
+
+                // 노드 마우스 아웃 이벤트
+                sig.bind('outNode', function() {
+                    if (!isClickHighlighted) {
+                        resetHighlight();
+                    }
+                });
+
+                // 노드 클릭 이벤트
+                sig.bind('clickNode', function(e) {
+                    isClickHighlighted = true;
+                    highlightConnectedElements(e.data.node.id);
+                });
+
+                // 배경 클릭 이벤트
+                sig.bind('clickStage', function() {
+                    isClickHighlighted = false;
+                    resetHighlight();
+                });
+            });
+        }
+
+        // URL 파라미터에서 파일 경로 가져오기
+        const fileFromUrl = getUrlParameter('file');
+        if (fileFromUrl) {
+            loadGexfFile(fileFromUrl);
+        }
+    </script>
+</body>
+</html> 

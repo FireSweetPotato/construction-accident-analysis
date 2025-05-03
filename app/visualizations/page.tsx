@@ -103,12 +103,12 @@ export default function VisualizationsPage() {
   const [selectedConstruction, setSelectedConstruction] = useState<ConstructionType>("철근콘크리트공사")
 
   const gephiLinks: Record<ConstructionType, string> = {
-    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true"
+    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
+    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
+    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
+    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
+    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
+    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true"
   }
 
   // 이미지 경로 생성 함수
@@ -352,6 +352,49 @@ export default function VisualizationsPage() {
           </Card>
         </TabsContent>
       </Tabs>
+
+      <Card className="mt-6">
+        <CardContent className="pt-6">
+          <h3 className="text-xl font-bold mb-4">공종별 시각화</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
+              <iframe
+                src="/게피/철근콘크리트.html"
+                className="w-full h-full border-0"
+                title="철근콘크리트 공종 시각화"
+              />
+            </div>
+            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
+              <iframe
+                src="/게피/철골.html"
+                className="w-full h-full border-0"
+                title="철골 공종 시각화"
+              />
+            </div>
+            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
+              <iframe
+                src="/게피/조적.html"
+                className="w-full h-full border-0"
+                title="조적 공종 시각화"
+              />
+            </div>
+            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
+              <iframe
+                src="/게피/미장.html"
+                className="w-full h-full border-0"
+                title="미장 공종 시각화"
+              />
+            </div>
+            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
+              <iframe
+                src="/게피/방수.html"
+                className="w-full h-full border-0"
+                title="방수 공종 시각화"
+              />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   )
 }
