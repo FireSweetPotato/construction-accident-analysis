@@ -8,13 +8,70 @@ import { useState } from "react"
 import Image from "next/image"
 
 function VisualizationFrame({ src, alt }: { src: string; alt: string }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+
+  const handleZoom = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setScale(parseFloat(e.target.value));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setStartPos({
+        x: e.clientX - position.x,
+        y: e.clientY - position.y
+      });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && scale > 1) {
+      setPosition({
+        x: e.clientX - startPos.x,
+        y: e.clientY - startPos.y
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
-    <div className="relative w-full h-full">
-      <iframe
-        src={`/visualization-viewer.html?image=${encodeURIComponent(src)}&alt=${encodeURIComponent(alt)}`}
-        className="w-full h-full border-0"
-        title={alt}
-      />
+    <div className="relative w-full h-full group">
+      <div className="absolute top-4 right-4 flex items-center gap-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 p-2 rounded-lg shadow-md">
+        <span className="text-sm text-gray-600 whitespace-nowrap">{Math.round(scale * 100)}%</span>
+        <input
+          type="range"
+          min="1"
+          max="3"
+          step="0.1"
+          value={scale}
+          onChange={handleZoom}
+          className="w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-blue-600 [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-0"
+        />
+      </div>
+      <div 
+        className="w-full h-full"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className={`object-contain p-4 transition-transform duration-200 ${scale > 1 ? 'cursor-move' : ''}`}
+          style={{ 
+            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+          }}
+          draggable="false"
+        />
+      </div>
     </div>
   );
 }
@@ -103,12 +160,12 @@ export default function VisualizationsPage() {
   const [selectedConstruction, setSelectedConstruction] = useState<ConstructionType>("철근콘크리트공사")
 
   const gephiLinks: Record<ConstructionType, string> = {
-    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
-    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
-    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
-    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
-    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true",
-    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.25&spreadFactor=2&hideBackButton=true"
+    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
+    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true"
   }
 
   // 이미지 경로 생성 함수
@@ -343,7 +400,7 @@ export default function VisualizationsPage() {
                   </svg>
                 </button>
                 <iframe
-                  src={gephiLinks[selectedConstruction]}
+                  src={`/gephi/${selectedConstruction === "해체및철거공사" ? "해체 및 철거공사" : selectedConstruction}.html`}
                   className="w-full h-full border-0"
                   title={`${selectedConstruction} Gephi 시각화`}
                 />
@@ -352,49 +409,6 @@ export default function VisualizationsPage() {
           </Card>
         </TabsContent>
       </Tabs>
-
-      <Card className="mt-6">
-        <CardContent className="pt-6">
-          <h3 className="text-xl font-bold mb-4">공종별 시각화</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
-              <iframe
-                src="/게피/철근콘크리트.html"
-                className="w-full h-full border-0"
-                title="철근콘크리트 공종 시각화"
-              />
-            </div>
-            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
-              <iframe
-                src="/게피/철골.html"
-                className="w-full h-full border-0"
-                title="철골 공종 시각화"
-              />
-            </div>
-            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
-              <iframe
-                src="/게피/조적.html"
-                className="w-full h-full border-0"
-                title="조적 공종 시각화"
-              />
-            </div>
-            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
-              <iframe
-                src="/게피/미장.html"
-                className="w-full h-full border-0"
-                title="미장 공종 시각화"
-              />
-            </div>
-            <div className="relative w-full h-[400px] bg-muted/30 rounded-lg border-2 border-border">
-              <iframe
-                src="/게피/방수.html"
-                className="w-full h-full border-0"
-                title="방수 공종 시각화"
-              />
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   )
 }

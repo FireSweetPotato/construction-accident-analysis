@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gephi 시각화</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f8f9fa;
+        }
+        #graph {
+            width: 100%;
+            height: 100vh;
+        }
+        .node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .node text {
+            font-size: 12px;
+            font-family: sans-serif;
+            pointer-events: none;
+        }
+        .link {
+            stroke: #999;
+            stroke-opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .node.highlighted {
+            filter: brightness(1);
+        }
+        .node.dimmed {
+            filter: brightness(0.3);
+        }
+        .link.highlighted {
+            stroke-width: 2;
+            stroke-opacity: 1;
+        }
+        .link.dimmed {
+            stroke-opacity: 0;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div id="graph">
+        <div class="loading">시각화를 로딩 중입니다...</div>
+    </div>
+    <script>
+        let selectedNode = null;
+        let graphData = null;
+        let transform = { x: 0, y: 0, k: 1 };
+
+        // 현재 파일 이름 가져오기
+        const currentFileName = window.location.pathname.split('/').pop().replace('.html', '');
+        
+        // GEXF 파일 로드
+        fetch(`gexf/${currentFileName}.gexf`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                const parser = new DOMParser();
+                const gexfDoc = parser.parseFromString(data, "text/xml");
+                
+                // 노드와 엣지 데이터 추출
+                const nodes = Array.from(gexfDoc.querySelectorAll("node")).map(node => {
+                    const vizSize = node.querySelector("viz\\:size");
+                    const vizPosition = node.querySelector("viz\\:position");
+                    const vizColor = node.querySelector("viz\\:color");
+                    const degree = parseInt(node.querySelector("attvalue[for='degree']").getAttribute("value"));
+                    const modularityClass = parseInt(node.querySelector("attvalue[for='modularity_class']").getAttribute("value"));
+                    
+                    return {
+                        id: node.getAttribute("id"),
+                        label: node.getAttribute("label"),
+                        size: vizSize ? parseFloat(vizSize.getAttribute("value")) / 10 : 10,
+                        x: vizPosition ? parseFloat(vizPosition.getAttribute("x")) : 0,
+                        y: vizPosition ? parseFloat(vizPosition.getAttribute("y")) : 0,
+                        color: vizColor ? `rgb(${vizColor.getAttribute("r")}, ${vizColor.getAttribute("g")}, ${vizColor.getAttribute("b")})` : "#999",
+                        degree: degree,
+                        modularityClass: modularityClass
+                    };
+                });
+
+                // degree 값의 범위를 찾아서 크기 스케일링
+                const minDegree = Math.min(...nodes.map(n => n.degree));
+                const maxDegree = Math.max(...nodes.map(n => n.degree));
+                const sizeScale = d3.scaleLinear()
+                    .domain([minDegree, maxDegree])
+                    .range([6, 24]); // 최소 6px, 최대 24px (4배 차이, 1.2배 증가)
+
+                // 노드 크기를 degree에 따라 조정
+                nodes.forEach(node => {
+                    node.size = sizeScale(node.degree);
+                });
+
+                // modularity class별 색상 매핑 생성
+                const modularityClasses = [...new Set(nodes.map(n => n.modularityClass))];
+                const colorScale = d3.scaleOrdinal()
+                    .domain(modularityClasses)
+                    .range(d3.schemeCategory10);
+
+                // 각 노드에 modularity class 색상 적용
+                nodes.forEach(node => {
+                    node.modularityColor = colorScale(node.modularityClass);
+                });
+
+                const edges = Array.from(gexfDoc.querySelectorAll("edge")).map(edge => {
+                    const sourceNode = nodes.find(n => n.id === edge.getAttribute("source"));
+                    const targetNode = nodes.find(n => n.id === edge.getAttribute("target"));
+                    return {
+                        source: edge.getAttribute("source"),
+                        target: edge.getAttribute("target"),
+                        weight: parseFloat(edge.getAttribute("weight") || "1"),
+                        sourceColor: sourceNode ? sourceNode.modularityColor : "#999",
+                        targetColor: targetNode ? targetNode.modularityColor : "#999"
+                    };
+                });
+
+                graphData = { nodes, edges };
+                document.querySelector(".loading").remove();
+                drawGraph();
+            })
+            .catch(error => {
+                console.error("Error loading GEXF file:", error);
+                document.getElementById("graph").innerHTML = `
+                    <div style='color: red; padding: 20px; text-align: center;'>
+                        GEXF 파일을 로드하는 중 오류가 발생했습니다.<br>
+                        ${error.message}
+                    </div>`;
+            });
+
+        function drawGraph() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const svg = d3.select("#graph")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            // 확대/축소 및 이동을 위한 g 요소 생성
+            const g = svg.append("g");
+
+            // 확대/축소 동작 정의
+            const zoom = d3.zoom()
+                .scaleExtent([0.1, 10])
+                .on("zoom", (event) => {
+                    transform = event.transform;
+                    g.attr("transform", event.transform);
+                });
+
+            svg.call(zoom);
+
+            // 시뮬레이션 설정
+            const simulation = d3.forceSimulation(graphData.nodes)
+                .force("link", d3.forceLink(graphData.edges).id(d => d.id).distance(100))
+                .force("charge", d3.forceManyBody().strength(-300))
+                .force("center", d3.forceCenter(width / 2, height / 2));
+
+            // 엣지 그리기
+            const link = g.append("g")
+                .selectAll("line")
+                .data(graphData.edges)
+                .enter()
+                .append("line")
+                .attr("class", "link")
+                .attr("stroke-width", d => Math.sqrt(d.weight))
+                .attr("stroke", d => d.sourceColor)
+                .attr("stroke-opacity", 0.5);
+
+            // 노드 그리기
+            const node = g.append("g")
+                .selectAll("g")
+                .data(graphData.nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node")
+                .call(d3.drag()
+                    .on("start", dragstarted)
+                    .on("drag", dragged)
+                    .on("end", dragended));
+
+            // 노드 원 추가
+            node.append("circle")
+                .attr("r", d => d.size)
+                .attr("fill", d => d.modularityColor);
+
+            // 노드 라벨 추가
+            node.append("text")
+                .text(d => d.label)
+                .attr("dy", 4)
+                .attr("text-anchor", "middle");
+
+            // 마우스 이벤트 처리
+            node.on("mouseover", handleMouseOver)
+                .on("mouseout", handleMouseOut)
+                .on("click", handleClick);
+
+            // 시뮬레이션 업데이트
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+
+            // 드래그 이벤트 핸들러
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+
+            // 마우스 오버/아웃 이벤트 핸들러
+            function handleMouseOver(event, d) {
+                if (selectedNode) return;
+
+                // 연결된 노드와 엣지 찾기
+                const connectedNodes = new Set();
+                const connectedEdges = new Set();
+
+                graphData.edges.forEach(edge => {
+                    if (edge.source.id === d.id || edge.target.id === d.id) {
+                        connectedNodes.add(edge.source.id);
+                        connectedNodes.add(edge.target.id);
+                        connectedEdges.add(edge);
+                    }
+                });
+
+                // 노드 스타일 업데이트
+                node.classed("highlighted", node => connectedNodes.has(node.id));
+                node.classed("dimmed", node => !connectedNodes.has(node.id));
+
+                // 엣지 스타일 업데이트
+                link
+                    .classed("highlighted", link => connectedEdges.has(link))
+                    .classed("dimmed", link => !connectedEdges.has(link))
+                    .attr("stroke-opacity", link => connectedEdges.has(link) ? 0.5 : 0);
+
+                // 연결된 노드 크기 증가
+                node.select("circle")
+                    .attr("r", node => connectedNodes.has(node.id) ? node.size * 1.2 : node.size)
+                    .attr("fill", node => {
+                        if (connectedNodes.has(node.id)) {
+                            return node.modularityColor;
+                        } else {
+                            return "#e0e0e0"; // 연한 회색
+                        }
+                    });
+            }
+
+            function handleMouseOut(event, d) {
+                if (selectedNode) return;
+
+                // 모든 노드와 엣지 원래 상태로 복원
+                node.classed("highlighted", false);
+                node.classed("dimmed", false);
+                link
+                    .classed("highlighted", false)
+                    .classed("dimmed", false)
+                    .attr("stroke-opacity", 0.5);
+
+                // 노드 크기와 색상 원래대로
+                node.select("circle")
+                    .attr("r", d => d.size)
+                    .attr("fill", d => d.modularityColor);
+            }
+
+            // 클릭 이벤트 핸들러
+            function handleClick(event, d) {
+                if (selectedNode === d.id) {
+                    // 같은 노드 클릭 시 선택 해제
+                    selectedNode = null;
+                    handleMouseOut(event, d);
+                } else {
+                    // 새 노드 선택
+                    selectedNode = d.id;
+                    handleMouseOver(event, d);
+                }
+            }
+
+            // 배경 클릭 이벤트
+            svg.on("click", event => {
+                if (event.target === svg.node()) {
+                    selectedNode = null;
+                    handleMouseOut(event, null);
+                }
+            });
+        }
+    </script>
+</body>
+</html> 

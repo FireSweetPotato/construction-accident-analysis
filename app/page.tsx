@@ -5,6 +5,84 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, BarChart2 } from "lucide-react"
+import { useState, useRef } from "react"
+
+function ZoomableImage({ src, alt }: { src: string; alt: string }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  const handleZoomIn = () => {
+    setScale(prev => Math.min(prev + 0.1, 3));
+  };
+
+  const handleZoomOut = () => {
+    setScale(prev => Math.max(prev - 0.1, 0.5));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartPos({ x: e.clientX - position.x, y: e.clientY - position.y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setPosition({
+      x: e.clientX - startPos.x,
+      y: e.clientY - startPos.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  return (
+    <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px] group">
+      <div className="absolute top-2 right-2 flex gap-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
+        <button
+          onClick={handleZoomIn}
+          className="bg-white/80 hover:bg-white p-1 rounded-full shadow-md"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+        <button
+          onClick={handleZoomOut}
+          className="bg-white/80 hover:bg-white p-1 rounded-full shadow-md"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+      <div 
+        ref={imageRef}
+        className="relative w-full h-full overflow-hidden"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain cursor-move transition-transform duration-200"
+          style={{
+            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+          }}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          draggable="false"
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -92,24 +170,8 @@ export default function Home() {
               <CardContent className="pt-6 h-full flex flex-col">
                 <h3 className="text-xl font-bold mb-4">건설업 재해 통계</h3>
                 <div className="flex-grow flex flex-col md:flex-row items-center justify-center gap-4 bg-muted/30 rounded-lg p-4">
-                  <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px]">
-                    <Image
-                      src="/재해자.jpg"
-                      alt="건설업 재해자 통계"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="relative w-full md:w-1/2 h-[300px] md:h-[400px]">
-                    <Image
-                      src="/사망자.jpg"
-                      alt="건설업 사망자 통계"
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  </div>
+                  <ZoomableImage src="/재해자.jpg" alt="건설업 재해자 통계" />
+                  <ZoomableImage src="/사망자.jpg" alt="건설업 사망자 통계" />
                 </div>
                 <div className="mt-4 text-sm text-muted-foreground">
                   <p>
