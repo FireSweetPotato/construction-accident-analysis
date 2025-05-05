@@ -2,193 +2,82 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BarChart3, Network, PieChart, TreesIcon as TreeStructure, Cloud, Grid3X3, Plus, Minus } from "lucide-react"
-import TopicVisualization from "@/components/visualizations/topic-visualization"
-import { useState } from "react"
-import Image from "next/image"
+import { BarChart3, Network, PieChart, TreesIcon as TreeStructure, Cloud, Grid3X3, Maximize2, Minimize2 } from "lucide-react"
+import { useState, useEffect } from "react"
 
-function VisualizationFrame({ src, alt }: { src: string; alt: string }) {
-  const [scale, setScale] = useState(1);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
-
-  const handleZoom = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setScale(parseFloat(e.target.value));
-  };
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (scale > 1) {
-      setIsDragging(true);
-      setStartPos({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && scale > 1) {
-      setPosition({
-        x: e.clientX - startPos.x,
-        y: e.clientY - startPos.y
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
+function ZoomableImage({ src }: { src: string }) {
   return (
-    <div className="relative w-full h-full group">
-      <div className="absolute top-4 right-4 flex items-center gap-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 p-2 rounded-lg shadow-md">
-        <span className="text-sm text-gray-600 whitespace-nowrap">{Math.round(scale * 100)}%</span>
-        <input
-          type="range"
-          min="1"
-          max="3"
-          step="0.1"
-          value={scale}
-          onChange={handleZoom}
-          className="w-32 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4 [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-blue-600 [&::-moz-range-thumb]:cursor-pointer [&::-moz-range-thumb]:border-0"
-        />
-      </div>
-      <div 
-        className="w-full h-full"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={`object-contain p-4 transition-transform duration-200 ${scale > 1 ? 'cursor-move' : ''}`}
-          style={{ 
-            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
-          }}
-          draggable="false"
-        />
-      </div>
+    <div className="relative w-full h-[600px] overflow-hidden">
+      <img
+        src={src}
+        alt="시각화 결과"
+        className="w-full h-full object-contain"
+      />
     </div>
   );
 }
 
-function ZoomableImage({ src, alt }: { src: string; alt: string }) {
-  const [scale, setScale] = useState(1);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [startPos, setStartPos] = useState({ x: 0, y: 0 });
+function GephiVisualization({ src }: { src: string }) {
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
-  const handleZoomIn = () => {
-    setScale(prev => Math.min(prev + 0.2, 3));
-  };
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
 
-  const handleZoomOut = () => {
-    setScale(prev => Math.max(prev - 0.2, 0.5));
-  };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (scale > 1) {
-      setIsDragging(true);
-      setStartPos({
-        x: e.clientX - position.x,
-        y: e.clientY - position.y
-      });
+  const toggleFullscreen = () => {
+    const element = document.getElementById('gephi-iframe');
+    if (!element) return;
+
+    if (!document.fullscreenElement) {
+      element.requestFullscreen();
+    } else {
+      document.exitFullscreen();
     }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && scale > 1) {
-      setPosition({
-        x: e.clientX - startPos.x,
-        y: e.clientY - startPos.y
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
   };
 
   return (
-    <div className="relative w-full h-full group">
-      <div className="absolute top-4 right-4 flex gap-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-        <button
-          onClick={handleZoomIn}
-          className="bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
-          title="확대"
-        >
-          <Plus className="h-5 w-5" />
-        </button>
-        <button
-          onClick={handleZoomOut}
-          className="bg-white/80 hover:bg-white p-2 rounded-full shadow-md"
-          title="축소"
-        >
-          <Minus className="h-5 w-5" />
-        </button>
-      </div>
-      <div 
-        className="w-full h-full"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
+    <div className="relative w-full h-[600px]">
+      <iframe
+        id="gephi-iframe"
+        src={src}
+        className="w-full h-full border-0"
+        allowFullScreen
+      />
+      <button
+        onClick={toggleFullscreen}
+        className="absolute top-4 right-4 p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition-colors"
+        title={isFullscreen ? "전체화면 종료" : "전체화면"}
       >
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          className={`object-contain p-4 transition-transform duration-200 ${scale > 1 ? 'cursor-move' : ''}`}
-          style={{ 
-            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
-          }}
-          draggable="false"
-        />
-      </div>
+        {isFullscreen ? <Minimize2 className="h-5 w-5" /> : <Maximize2 className="h-5 w-5" />}
+      </button>
     </div>
   );
 }
 
 export default function VisualizationsPage() {
-  const constructionTypes = ["철근콘크리트공사", "가설공사", "기계설비공사", "해체및철거공사", "토공사", "철골공사"] as const;
+  const constructionTypes = ["철근콘크리트공사", "가설공사", "기계설비공사", "해체 및 철거공사", "토공사", "철골공사"] as const;
   type ConstructionType = typeof constructionTypes[number];
   
   const [selectedConstruction, setSelectedConstruction] = useState<ConstructionType>("철근콘크리트공사")
 
-  const gephiLinks: Record<ConstructionType, string> = {
-    "철근콘크리트공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B7%BC%EC%BD%98%ED%81%AC%EB%A6%AC%ED%8A%B8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "가설공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B0%80%EC%84%A4%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "기계설비공사": "https://firesweetpotato.github.io/Text/gongjong_%EA%B8%B0%EA%B3%84%EC%84%A4%EB%B9%84%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "해체및철거공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%95%B4%EC%B2%B4%20%EB%B0%8F%20%EC%B2%A0%EA%B1%B0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "토공사": "https://firesweetpotato.github.io/Text/gongjong_%ED%86%A0%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true",
-    "철골공사": "https://firesweetpotato.github.io/Text/gongjong_%EC%B2%A0%EA%B3%A8%EA%B3%B5%EC%82%AC_gephi.html?nodeSize=0.5&hideBackButton=true"
-  }
-
   // 이미지 경로 생성 함수
   const getImagePath = (type: string) => {
-    const constructionFolder = selectedConstruction === "해체및철거공사" ? "해체 및 철거공사" : selectedConstruction;
     const fileName = {
-      bar: selectedConstruction === "해체및철거공사" 
-        ? "해체 및 철거공사_barchart.png"
-        : `${selectedConstruction}_barchart.png`,
-      heatmap: selectedConstruction === "해체및철거공사"
-        ? "해체 및 철거공사_heatmap.png"
-        : `${selectedConstruction}_heatmap.png`,
-      topic: selectedConstruction === "해체및철거공사"
-        ? "해체 및 철거공사_topics.png"
-        : `${selectedConstruction}_topics.png`,
-      hierarchy: selectedConstruction === "해체및철거공사"
-        ? "해체 및 철거공사_hierarchy.png"
-        : `${selectedConstruction}_hierarchy.png`,
-      wordcloud: selectedConstruction === "해체및철거공사"
-        ? "해체 및 철거공사_wordcloud.png"
-        : `${selectedConstruction}_wordcloud.png`
+      bar: `${selectedConstruction}_barchart.png`,
+      heatmap: `${selectedConstruction}_heatmap.png`,
+      topic: `${selectedConstruction}_topics.png`,
+      hierarchy: `${selectedConstruction}_hierarchy.png`,
+      wordcloud: `${selectedConstruction}_wordcloud.png`,
+      gephi: `${selectedConstruction}.html`
     }[type];
-    return `/visualizations/${constructionFolder}/${fileName}`
+    return `/최종 분석 결과/${selectedConstruction}/${fileName}`
   }
 
   return (
@@ -263,152 +152,90 @@ export default function VisualizationsPage() {
           </div>
         </div>
 
-        <TabsContent value="bar-graph" className="mt-6">
+        <TabsContent value="bar-graph">
           <Card>
             <CardHeader>
-              <CardTitle>막대그래프 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}에서 발생한 사고 유형별 발생 빈도를 막대그래프로 시각화한 결과입니다.
-              </CardDescription>
+              <CardTitle>주제별 빈도 분석 - {selectedConstruction}</CardTitle>
+              <CardDescription>각 주제의 빈도를 막대 그래프로 시각화</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <VisualizationFrame
-                  src={getImagePath("bar")}
-                  alt={`${selectedConstruction} 막대그래프`}
+              <div className="relative w-full h-[700px]">
+                <iframe
+                  src={`/gephi/visualize_barchart.html?construction=${selectedConstruction}`}
+                  className="w-full h-full border-0"
+                  allowFullScreen
                 />
               </div>
             </CardContent>
           </Card>
         </TabsContent>
 
-        <TabsContent value="heatmap" className="mt-6">
+        <TabsContent value="heatmap">
           <Card>
             <CardHeader>
-              <CardTitle>히트맵 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}에서의 사고 유형 분포를 히트맵으로 시각화한 결과입니다.
-              </CardDescription>
+              <CardTitle>주제 간 유사도 분석 - {selectedConstruction}</CardTitle>
+              <CardDescription>주제 간의 유사도를 히트맵으로 시각화</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <VisualizationFrame
-                  src={getImagePath("heatmap")}
-                  alt={`${selectedConstruction} 히트맵`}
+              <ZoomableImage src={getImagePath("heatmap")} />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="topic-distribution">
+          <Card>
+            <CardHeader>
+              <CardTitle>주제 분포 분석 - {selectedConstruction}</CardTitle>
+              <CardDescription>주제의 분포를 산점도로 시각화</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ZoomableImage src={getImagePath("topic")} />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="topic-hierarchy">
+          <Card>
+            <CardHeader>
+              <CardTitle>주제 계층 구조 분석 - {selectedConstruction}</CardTitle>
+              <CardDescription>주제의 계층 구조를 트리맵으로 시각화</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ZoomableImage src={getImagePath("hierarchy")} />
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="word-cloud">
+          <Card>
+            <CardHeader>
+              <CardTitle>주제별 키워드 분석 - {selectedConstruction}</CardTitle>
+              <CardDescription>주제별 키워드를 워드클라우드로 시각화</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="relative w-full h-[700px]">
+                <iframe
+                  src={`/gephi/visualize_wordcloud.html?construction=${selectedConstruction}`}
+                  className="w-full h-full border-0"
+                  allowFullScreen
                 />
               </div>
             </CardContent>
           </Card>
         </TabsContent>
 
-        <TabsContent value="topic-distribution" className="mt-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>주제분포도 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}에서 BERTopic으로 추출한 주요 토픽의 분포를 시각화한 결과입니다.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <VisualizationFrame
-                  src={getImagePath("topic")}
-                  alt={`${selectedConstruction} 주제분포도`}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="topic-hierarchy" className="mt-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>주제계층도 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}에서 토픽 간의 계층적 관계를 트리 구조로 시각화한 결과입니다.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <VisualizationFrame
-                  src={getImagePath("hierarchy")}
-                  alt={`${selectedConstruction} 주제계층도`}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="word-cloud" className="mt-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>워드클라우드 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}에서 주요 키워드의 빈도를 워드클라우드로 시각화한 결과입니다.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative">
-                <VisualizationFrame
-                  src={getImagePath("wordcloud")}
-                  alt={`${selectedConstruction} 워드클라우드`}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-
-        <TabsContent value="gephi" className="mt-6">
+        <TabsContent value="gephi">
           <Card>
             <CardHeader>
               <CardTitle>Gephi 네트워크 시각화 - {selectedConstruction}</CardTitle>
-              <CardDescription>
-                {selectedConstruction}의 키워드 네트워크를 Gephi로 시각화한 결과입니다.
-              </CardDescription>
+              <CardDescription>키워드 네트워크를 Gephi로 시각화</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="h-[600px] bg-muted/30 rounded-lg border-2 border-border relative group">
-                <button
-                  onClick={() => {
-                    const iframe = document.querySelector('iframe[title*="Gephi 시각화"]');
-                    if (iframe) {
-                      if (iframe.requestFullscreen) {
-                        iframe.requestFullscreen();
-                      } else if ((iframe as any).webkitRequestFullscreen) {
-                        (iframe as any).webkitRequestFullscreen();
-                      } else if ((iframe as any).msRequestFullscreen) {
-                        (iframe as any).msRequestFullscreen();
-                      }
-                    }
-                  }}
-                  className="absolute top-2 right-2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all duration-200 opacity-0 group-hover:opacity-100 hover:scale-110"
-                  title="전체화면"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-gray-700"
-                  >
-                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
-                  </svg>
-                </button>
-                <iframe
-                  src={`/gephi/${selectedConstruction === "해체및철거공사" ? "해체 및 철거공사" : selectedConstruction}.html`}
-                  className="w-full h-full border-0"
-                  title={`${selectedConstruction} Gephi 시각화`}
-                />
-              </div>
+              <GephiVisualization src={`/gephi/${selectedConstruction}.html`} />
             </CardContent>
           </Card>
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }

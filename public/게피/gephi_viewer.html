@@ -167,7 +167,7 @@
                     defaultNodeColor: '#ec5148',
                     defaultEdgeColor: '#666',
                     labelThreshold: 5,
-                    minNodeSize: 1,
+                    minNodeSize: 2,
                     maxNodeSize: 10,
                     minEdgeSize: 0.1,
                     maxEdgeSize: 2,
@@ -203,7 +203,7 @@
                 // 5초 후 레이아웃 중지
                 setTimeout(function() {
                     sig.stopForceAtlas2();
-                }, 5000);
+                }, 10000);
 
                 // 노드 마우스 오버 이벤트
                 sig.bind('overNode', function(e) {
