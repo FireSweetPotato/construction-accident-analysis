@@ -2,89 +2,34 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주제별 키워드 분석</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+    <title>워드클라우드</title>
     <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-        #chart {
-            width: 100%;
-            height: 100%;
-        }
+        body { margin: 0; padding: 0; text-align: center; background: #fff; }
+        img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        .error { color: red; margin-top: 2em; }
     </style>
 </head>
 <body>
-    <div id="chart"></div>
+    <h2>Word Cloud</h2>
+    <div id="img-container"></div>
     <script>
-        // URL에서 공종 정보 추출
-        const urlParams = new URLSearchParams(window.location.search);
-        const constructionType = urlParams.get('type') || '철근콘크리트공사';
-        const constructionFolder = constructionType === '해체및철거공사' ? '해체 및 철거공사' : constructionType;
-
-        // 데이터 로딩 함수
-        async function loadData() {
-            try {
-                const response = await fetch(`../최종 분석 결과/${constructionFolder}/${constructionType}_ctfidf_keywords.xlsx`);
-                const arrayBuffer = await response.arrayBuffer();
-                const data = new Uint8Array(arrayBuffer);
-                const workbook = XLSX.read(data, { type: 'array' });
-                const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
-                const jsonData = XLSX.utils.sheet_to_json(firstSheet);
-
-                // 데이터 처리
-                const keywords = jsonData.map(row => row['Keyword']);
-                const weights = jsonData.map(row => row['c_tf_idf']);
-
-                // 차트 생성
-                const trace = {
-                    type: 'scatter',
-                    mode: 'text',
-                    text: keywords,
-                    textfont: {
-                        size: weights.map(w => w * 20),
-                        color: 'rgb(55, 128, 191)'
-                    },
-                    x: Array(keywords.length).fill(0),
-                    y: Array(keywords.length).fill(0),
-                    textposition: 'middle center'
-                };
-
-                const layout = {
-                    title: `${constructionType} - 주제별 키워드 분석`,
-                    showlegend: false,
-                    xaxis: {
-                        showgrid: false,
-                        zeroline: false,
-                        showticklabels: false
-                    },
-                    yaxis: {
-                        showgrid: false,
-                        zeroline: false,
-                        showticklabels: false
-                    },
-                    margin: {
-                        l: 50,
-                        r: 50,
-                        b: 100,
-                        t: 50,
-                        pad: 4
-                    }
-                };
-
-                Plotly.newPlot('chart', [trace], layout);
-            } catch (error) {
-                console.error('Error loading data:', error);
-                document.getElementById('chart').innerHTML = '<p style="color: red;">데이터를 로드하는 중 오류가 발생했습니다.</p>';
-            }
+        function getConstruction() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('construction');
         }
-
-        // 페이지 로드 시 데이터 로드
-        window.onload = loadData;
+        const construction = getConstruction();
+        const container = document.getElementById('img-container');
+        if (construction) {
+            const img = document.createElement('img');
+            img.src = `/최종 분석 결과/${construction}/${construction}_wordcloud.png`;
+            img.alt = `${construction} 워드클라우드 이미지`;
+            img.onerror = function() {
+                container.innerHTML = '<div class="error">워드클라우드 이미지를 찾을 수 없습니다.</div>';
+            };
+            container.appendChild(img);
+        } else {
+            container.innerHTML = '<div class="error">공종명이 지정되지 않았습니다.</div>';
+        }
     </script>
 </body>
 </html> 
