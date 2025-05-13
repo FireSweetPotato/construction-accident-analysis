@@ -12,15 +12,49 @@
             padding: 20px;
             font-family: Arial, sans-serif;
         }
+        #plotly-wrapper {
+            width: 100vw;
+            height: 90vh;
+            overflow: hidden;
+            position: relative;
+        }
         #chart {
             width: 100%;
             height: 100%;
         }
+        .error { color: red; margin-top: 2em; }
     </style>
 </head>
 <body>
-    <div id="chart"></div>
+    <h2>Heatmap</h2>
+    <div id="plotly-wrapper">
+        <div id="chart"></div>
+    </div>
     <script>
+        // 확대/이동 기능
+        let scale = 1, offsetX = 0, offsetY = 0, isDragging = false, lastX = 0, lastY = 0;
+        const wrapper = document.getElementById('plotly-wrapper');
+        function updateTransform() {
+            wrapper.style.transform = `translate(${offsetX}px,${offsetY}px) scale(${scale})`;
+        }
+        wrapper.addEventListener('wheel', e => {
+            e.preventDefault();
+            scale += e.deltaY < 0 ? 0.1 : -0.1;
+            scale = Math.max(0.2, Math.min(5, scale));
+            updateTransform();
+        });
+        wrapper.addEventListener('mousedown', e => {
+            isDragging = true; lastX = e.clientX; lastY = e.clientY;
+        });
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            offsetX += e.clientX - lastX;
+            offsetY += e.clientY - lastY;
+            lastX = e.clientX; lastY = e.clientY;
+            updateTransform();
+        });
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
         // URL에서 공종 정보 추출
         const urlParams = new URLSearchParams(window.location.search);
         const constructionType = urlParams.get('type') || '철근콘크리트공사';
@@ -62,7 +96,7 @@
                     }
                 };
 
-                Plotly.newPlot('chart', [trace], layout);
+                Plotly.newPlot('chart', [trace], layout, {scrollZoom: true});
             } catch (error) {
                 console.error('Error loading data:', error);
                 document.getElementById('chart').innerHTML = '<p style="color: red;">데이터를 로드하는 중 오류가 발생했습니다.</p>';
