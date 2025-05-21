@@ -95,7 +95,7 @@ export default function Home() {
           {/* Left column - Text content */}
           <div className="space-y-8 lg:pr-8 z-10">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 dark:text-gray-100">
-              <span className="block mb-2">텍스트 마이닝을</span>
+              <span className="block mb-2">BERTopic을</span>
               <span className="block mb-2">활용한 건설현장의</span>
               <span className="block">공종별 재해 특성 분석</span>
             </h1>
