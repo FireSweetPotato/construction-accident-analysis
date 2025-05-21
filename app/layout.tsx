@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "텍스트 마이닝을 활용한 건설현장의 공종별 재해 특성 분석",
+  title: "BERTopic을 활용한 건설현장의 공종별 재해 특성 분석",
   description: "BERTopic을 활용한 건설 현장 사고 텍스트 마이닝 분석 결과",
 }
 
