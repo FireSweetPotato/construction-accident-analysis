@@ -97,15 +97,8 @@ export default function MethodologyPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 dark:text-gray-300">
-                건설 현장 사고 보고서 및 관련 문서를 수집하여 분석 데이터셋을 구축했습니다. 데이터는 다음과 같은
-                출처에서 수집되었습니다:
+                2020년부터 2024년까지 건설공사 안전관리 종합정보망(CSI)의 사고 신고 데이터를 기반으로 하고 있으며, 총 21,686건의 사고 사례를 기반으로 분석을 진행.
               </p>
-              <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700 dark:text-gray-300">
-                <li>건설 현장 사고 보고서</li>
-                <li>안전 관리 문서</li>
-                <li>사고 조사 보고서</li>
-                <li>작업자 인터뷰 기록</li>
-              </ul>
             </CardContent>
           </Card>
 
@@ -152,10 +145,12 @@ export default function MethodologyPage() {
                 분석 결과는 다음과 같은 시각화 방법을 통해 표현했습니다:
               </p>
               <ul className="list-disc pl-6 mt-4 space-y-2 text-gray-700 dark:text-gray-300">
-                <li>토픽 분포 시각화 (막대 그래프, 원형 차트)</li>
-                <li>토픽 간 관계 시각화 (네트워크 그래프)</li>
-                <li>시간에 따른 토픽 변화 추이 (라인 차트)</li>
-                <li>키워드 중요도 시각화 (워드 클라우드)</li>
+                <li>막대그래프 : 토픽에서 중요도가 높은 키워드를 막대그래프로 시각화</li>
+                <li>히트맵 : 토픽 간 유사도를 색상으로 표현</li>
+                <li>주제분포도 : 토픽 또는 문서 간의 상대적인 거리 구조를 평면에 배치</li>
+                <li>주체계층도 : 클래스 기반의 TF-IDF 유사도를 바탕으로 토픽 간 관계를 트리 구조로 시각화</li>
+                <li>워드클라우드 : 토픽 내 키워드를 워드클라우드 형태로 시각화</li>
+                <li>Gephi 네트워크 : 토픽 간 관계를 네트워크 형태로 시각화</li>
               </ul>
             </CardContent>
           </Card>
